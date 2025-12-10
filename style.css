@@ -17,10 +17,24 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
 body {
-    background-color: var(--bg-dark);
+    /* Merged Background Animation & Basic Styles */
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #172554, #0f172a);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     color: var(--text-main);
     line-height: 1.6;
+}
+
+/* Background Animation Keyframes */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* --- LAYOUT UTILITIES --- */
@@ -45,7 +59,6 @@ section {
 .hero {
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(30,41,59,0.5) 100%);
 }
 
 .hero h1 {
@@ -111,8 +124,10 @@ section {
     transition: transform 0.2s ease;
 }
 
-.card:hover {
-    border-color: var(--primary);
+/* OPTUS HIGHLIGHT CARD STYLE */
+.highlight-card {
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
 }
 
 .card-header {
@@ -139,6 +154,12 @@ section {
     border-radius: 4px;
     font-size: 0.85rem;
     color: var(--text-muted);
+}
+
+.date-inline {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-left: 10px;
 }
 
 .job-list {
@@ -169,20 +190,19 @@ section {
 .tags span:hover {
     border-color: var(--primary);
     color: var(--primary);
+    background: rgba(59, 130, 246, 0.1);
 }
 
 /* --- PDF CERTIFICATES STYLING (COMPACT VERSION) --- */
-
 .cert-grid {
     display: grid;
-    /* This ensures boxes don't get too wide */
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
     gap: 15px;
 }
 
 .cert-item {
     background-color: var(--bg-card);
-    padding: 15px; /* Reduced from 20px */
+    padding: 15px; 
     border-radius: 6px;
     border: 1px solid var(--border);
     transition: 0.3s;
@@ -198,14 +218,14 @@ section {
 }
 
 .pdf-icon-box {
-    font-size: 2rem; /* Reduced from 3rem */
-    color: #ef4444;  /* PDF Red */
+    font-size: 2rem; 
+    color: #ef4444;  
     margin-bottom: 8px;
 }
 
 .cert-item h4 {
     margin-bottom: 10px;
-    font-size: 0.95rem; /* Slightly smaller text */
+    font-size: 0.95rem; 
     color: var(--text-main);
     text-align: center;
 }
@@ -213,9 +233,9 @@ section {
 .pdf-link {
     text-decoration: none;
     color: var(--text-muted);
-    font-size: 0.8rem; /* Smaller font */
+    font-size: 0.8rem; 
     border: 1px solid var(--border);
-    padding: 5px 12px; /* Tighter button padding */
+    padding: 5px 12px; 
     border-radius: 4px;
     transition: 0.3s;
     background-color: rgba(255,255,255,0.05);
@@ -240,46 +260,23 @@ footer {
     border-top: 1px solid var(--border);
 }
 
+/* --- ANIMATION CLASSES (SCROLL REVEAL) --- */
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.2rem; }
     .grid-2 { grid-template-columns: 1fr; }
     .card-header { flex-direction: column; gap: 10px; }
     .contact-bar { flex-direction: column; gap: 10px; }
-}
-
-}
-
-/* --- 1. SMOOTH SCROLLING --- */
-html {
-    scroll-behavior: smooth;
-}
-
-/* --- 2. MOVING GRADIENT BACKGROUND --- */
-body {
-    /* This overrides the solid color with a moving gradient */
-    background: linear-gradient(-45deg, #0f172a, #1e293b, #172554, #0f172a);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-}
-
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* --- 3. SCROLL REVEAL ANIMATION CLASSES --- */
-/* Elements start invisible and slightly lower down */
-.reveal {
-    position: relative;
-    transform: translateY(50px);
-    opacity: 0;
-    transition: all 1s ease;
-}
-
-/* When the JavaScript adds this class, they slide up and fade in */
-.reveal.active {
-    transform: translateY(0);
-    opacity: 1;
 }
