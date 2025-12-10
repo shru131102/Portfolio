@@ -247,4 +247,39 @@ footer {
     .card-header { flex-direction: column; gap: 10px; }
     .contact-bar { flex-direction: column; gap: 10px; }
 }
+
+}
+
+/* --- 1. SMOOTH SCROLLING --- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- 2. MOVING GRADIENT BACKGROUND --- */
+body {
+    /* This overrides the solid color with a moving gradient */
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #172554, #0f172a);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- 3. SCROLL REVEAL ANIMATION CLASSES --- */
+/* Elements start invisible and slightly lower down */
+.reveal {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+/* When the JavaScript adds this class, they slide up and fade in */
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
 }
