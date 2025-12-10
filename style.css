@@ -1,0 +1,250 @@
+/* --- GLOBAL VARIABLES --- */
+:root {
+    --primary: #3b82f6;      /* Bright Blue */
+    --primary-dark: #2563eb; /* Darker Blue for hover */
+    --bg-dark: #0f172a;      /* Deep Navy Background */
+    --bg-card: #1e293b;      /* Lighter Navy for cards */
+    --text-main: #f8fafc;    /* White text */
+    --text-muted: #94a3b8;   /* Grey text */
+    --border: #334155;       /* Border color */
+}
+
+/* --- RESET & BASIC SETUP --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* --- LAYOUT UTILITIES --- */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(30,41,59,0.5) 100%);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: var(--primary);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.contact-bar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.contact-bar span i {
+    color: var(--primary);
+    margin-right: 5px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* --- SECTIONS & HEADINGS --- */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
+}
+
+/* --- CARDS (JOBS, EDUCATION, REFERENCES) --- */
+.card {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 25px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    border-color: var(--primary);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.company {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.date {
+    background-color: var(--border);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.job-list {
+    list-style-position: inside;
+    color: var(--text-muted);
+}
+
+.job-list li {
+    margin-bottom: 8px;
+}
+
+/* --- SKILLS & TAGS --- */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background-color: var(--border);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.tags span:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* --- PDF CERTIFICATES STYLING (COMPACT VERSION) --- */
+
+.cert-grid {
+    display: grid;
+    /* This ensures boxes don't get too wide */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+    gap: 15px;
+}
+
+.cert-item {
+    background-color: var(--bg-card);
+    padding: 15px; /* Reduced from 20px */
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.pdf-icon-box {
+    font-size: 2rem; /* Reduced from 3rem */
+    color: #ef4444;  /* PDF Red */
+    margin-bottom: 8px;
+}
+
+.cert-item h4 {
+    margin-bottom: 10px;
+    font-size: 0.95rem; /* Slightly smaller text */
+    color: var(--text-main);
+    text-align: center;
+}
+
+.pdf-link {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.8rem; /* Smaller font */
+    border: 1px solid var(--border);
+    padding: 5px 12px; /* Tighter button padding */
+    border-radius: 4px;
+    transition: 0.3s;
+    background-color: rgba(255,255,255,0.05);
+}
+
+.pdf-link:hover {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.pdf-link i {
+    margin-left: 5px;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .card-header { flex-direction: column; gap: 10px; }
+    .contact-bar { flex-direction: column; gap: 10px; }
+}
+}
