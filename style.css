@@ -22,19 +22,74 @@ html {
 }
 
 body {
-    /* Merged Background Animation & Basic Styles */
-    background: linear-gradient(-45deg, #0f172a, #1e293b, #172554, #0f172a);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    background-color: #000000; /* Deep black base */
     color: var(--text-main);
     line-height: 1.6;
+    position: relative;
+    overflow-x: hidden; /* Prevents scrollbars if lights move off screen */
 }
 
-/* Background Animation Keyframes */
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.aurora-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Sends it behind your text */
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 100%, #1e293b 0%, #000000 100%);
+}
+
+.aurora-light {
+    position: absolute;
+    filter: blur(60px);
+    opacity: 0.5;
+    border-radius: 50%;
+    animation: drift 10s infinite alternate ease-in-out;
+}
+
+/* Light 1: Blue/Cyan (Top Left) */
+.aurora-light:nth-child(1) {
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: #3b82f6;
+    animation-duration: 8s;
+}
+
+/* Light 2: Purple/Pink (Top Right) */
+.aurora-light:nth-child(2) {
+    top: -10%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: #9333ea;
+    animation-duration: 12s;
+    animation-delay: 1s;
+}
+
+/* Light 3: Green/Teal (Moving Center) */
+.aurora-light:nth-child(3) {
+    bottom: -20%;
+    left: 20%;
+    width: 70vw;
+    height: 40vw;
+    background: #10b981;
+    opacity: 0.3;
+    animation: floatUp 15s infinite alternate ease-in-out;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes drift {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(30px, 50px) scale(1.1); }
+}
+
+@keyframes floatUp {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(50px, -30px) rotate(10deg); }
+    100% { transform: translate(-20px, 20px) rotate(-5deg); }
 }
 
 /* --- LAYOUT UTILITIES --- */
@@ -280,3 +335,4 @@ footer {
     .card-header { flex-direction: column; gap: 10px; }
     .contact-bar { flex-direction: column; gap: 10px; }
 }
+
