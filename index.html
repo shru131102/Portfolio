@@ -1,333 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shrudam D. Prajapati | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <noscript><style>.reveal { opacity: 1 !important; }</style></noscript>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shrudam D. Prajapati — Revenue Growth Specialist</title>
+<meta name="description" content="B2B sales and strategic partnerships portfolio of Shrudam D. Prajapati.">
+
+<link rel="stylesheet" href="vendor/fonts.css">
+<link rel="stylesheet" href="style.css">
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<noscript><style>.reveal,.split-char{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
 <body>
-    <div class="aurora-container">
-        <div class="aurora-light"></div>
-        <div class="aurora-light"></div>
-        <div class="aurora-light"></div>
+
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+
+<nav class="nav">
+    <a href="#top" class="nav-mark">SP</a>
+    <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#stats">Track Record</a>
+        <a href="#credentials">Credentials</a>
+        <a href="mailto:shrudap@gmail.com" class="nav-cta">Contact</a>
     </div>
+</nav>
 
-    <header class="hero">
-        <div class="container">
-            <h1>Shrudam D. Prajapati</h1>
-            <p class="subtitle">Revenue Growth Specialist | B2B Sales & Strategic Partnerships</p>
-            
-            <div class="contact-bar">
-                <span><i class="fas fa-map-marker-alt"></i> Gujarat, India</span>
-                <span><i class="fas fa-phone"></i> +91 98250 36396</span>
-                <span><i class="fas fa-envelope"></i> shrudap@gmail.com</span>
-            </div>
-            
-            <a href="mailto:shrudap@gmail.com" class="btn">Contact Me</a>
+<!-- ============ HERO ============ -->
+<header id="top" class="hero">
+    <div class="hero-stage">
+        <p class="eyebrow reveal-up">REVENUE GROWTH SPECIALIST — B2B SALES &amp; STRATEGIC PARTNERSHIPS</p>
+        <h1 class="hero-name" aria-label="Shrudam D. Prajapati">
+            <span class="line" data-line>Shrudam D.</span>
+            <span class="line" data-line>Prajapati</span>
+        </h1>
+        <svg class="growth-line" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+            <path id="heroPath" d="M0,95 C150,95 180,40 280,55 C400,72 430,20 560,30 C700,42 740,75 850,45 C920,25 950,18 1000,10" />
+        </svg>
+        <div class="hero-meta reveal-up">
+            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg> Gujarat, India</span>
+            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg> +91 98250 36396</span>
+            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> shrudap@gmail.com</span>
         </div>
-    </header>
+    </div>
+    <div class="scroll-cue"><span></span> Scroll</div>
+</header>
 
-    <section id="summary" class="bg-dark">
-        <div class="container">
-            <h2 class="section-title reveal">Professional Summary</h2>
-            <div class="card reveal">
-                <p>
-                    High-performing B2B sales professional with <span class="stat-inline"><span class="counter" data-target="3">0</span>+</span> years of progressive experience at Optus Australia, consistently exceeding revenue targets by <span class="stat-inline"><span class="counter" data-target="120">0</span>%+</span> while maintaining a <span class="stat-inline"><span class="counter" data-target="10">0</span>/10</span> NPS. Proven across full-cycle enterprise account management, from lead generation and needs analysis through contract negotiation and long-term retention. Currently driving client acquisition and strategic partnerships for a US-based growth marketing firm targeting $10M+ revenue companies.
-                </p>
+<!-- ============ SUMMARY STRIP ============ -->
+<section class="summary-strip">
+    <div class="container">
+        <p class="summary-text reveal">
+            Three years turning enterprise telecom and SaaS relationships into compounding revenue at Optus Australia —
+            now opening new B2B markets for a US growth firm. The throughline: full-cycle ownership, from first cold
+            touch to renewal, and a habit of beating target.
+        </p>
+    </div>
+</section>
+
+<!-- ============ STATS (pinned, scrubbed) ============ -->
+<section id="stats" class="stats-pin">
+    <div class="stats-inner">
+        <p class="eyebrow light">TRACK RECORD</p>
+        <div class="stats-chart">
+            <svg viewBox="0 0 1000 280" preserveAspectRatio="none" aria-hidden="true">
+                <path id="statPath" d="M0,250 C120,250 160,210 240,190 C340,165 380,150 460,120 C560,85 600,95 700,60 C800,28 850,40 1000,15" />
+            </svg>
+        </div>
+        <div class="stats-grid">
+            <div class="stat">
+                <span class="stat-num" data-target="120" data-suffix="%+">0%+</span>
+                <span class="stat-label">Average quarterly target attainment at Optus</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num" data-target="10" data-suffix="/10">0/10</span>
+                <span class="stat-label">Net Promoter Score maintained across the book</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num" data-target="3" data-suffix="+">0+</span>
+                <span class="stat-label">Years of progressive B2B &amp; enterprise ownership</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num" data-target="10" data-suffix="M+">0M+</span>
+                <span class="stat-label">Revenue tier of accounts currently targeted</span>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title reveal">Professional Experience</h2>
+<!-- ============ EXPERIENCE (sticky rail swap) ============ -->
+<section id="experience" class="experience">
+    <div class="container exp-grid">
+        <div class="exp-rail">
+            <p class="eyebrow">EXPERIENCE</p>
+            <h2 class="exp-rail-title" id="railTitle">LeanSummits</h2>
+            <p class="exp-rail-sub" id="railSub">California, USA · Remote</p>
+            <p class="exp-rail-date" id="railDate">Feb 2026 — Present</p>
+        </div>
+        <div class="exp-track">
 
-            <div class="card highlight-card reveal">
-                <div class="card-header">
-                    <div>
-                        <h3>Account Executive</h3>
-                        <span class="company">LeanSummits</span> | California, USA (Remote)
-                    </div>
-                    <span class="date">Feb 2026 - Present</span>
-                </div>
-                <ul class="job-list">
-                    <li><strong>Multi-channel Outbound:</strong> Build and execute LinkedIn, email, and cold outreach strategies targeting $10M+ revenue companies across logistics, healthcare, e-commerce, and automotive sectors.</li>
-                    <li><strong>Strategic Partnerships:</strong> Develop partnerships and manage the client lifecycle from prospecting and qualification through deal closure and onboarding.</li>
-                    <li><strong>Market Expansion:</strong> Contribute to international market expansion and pipeline development for a US-based B2B growth marketing firm.</li>
+            <article class="exp-card" data-company="LeanSummits" data-sub="California, USA · Remote" data-date="Feb 2026 — Present">
+                <span class="exp-role-tag">Account Executive</span>
+                <ul>
+                    <li><strong>Multi-channel outbound.</strong> Build and run LinkedIn, email, and cold-call strategy targeting $10M+ revenue companies across logistics, healthcare, e-commerce, and automotive.</li>
+                    <li><strong>Strategic partnerships.</strong> Own the client lifecycle end to end — prospecting, qualification, deal closure, onboarding.</li>
+                    <li><strong>Market expansion.</strong> Contribute to international pipeline development for a US-based B2B growth marketing firm.</li>
                 </ul>
-            </div>
+            </article>
 
-            <div class="reveal">
-                <h3 style="margin-bottom: 15px; color: #94a3b8;">Optus Experience</h3>
-                <div class="card">
-                    <div style="margin-bottom: 20px;">
-                        <p style="font-size: 1.1rem; color: #f8fafc;"><strong>Business Specialist - B2B & SME | Optus</strong> <span class="date-inline">(Sep 2024 - Feb 2026)</span></p>
-                        <p style="color: #94a3b8; margin-top: 5px;">
-                            Managed SME and enterprise clients with $5M+ revenue as the primary contact for telecom infrastructure, NBN rollout, and 5G fleet upgrades. Exceeded quarterly sales targets by 120%+ with tailored Voice, Data, and SaaS solution packages while maintaining a 10/10 Net Promoter Score.
-                        </p>
-                    </div>
-                    
-                    <hr style="border: 0; border-top: 1px solid #334155; margin: 20px 0;">
+            <article class="exp-card" data-company="Optus — Business Specialist" data-sub="B2B &amp; SME · Australia" data-date="Sep 2024 — Feb 2026">
+                <span class="exp-role-tag">Business Specialist, B2B &amp; SME</span>
+                <ul>
+                    <li><strong>Enterprise ownership.</strong> Primary contact for SME and enterprise clients with $5M+ revenue across telecom infrastructure, NBN rollout, and 5G fleet upgrades.</li>
+                    <li><strong>Target attainment.</strong> Exceeded quarterly sales targets by 120%+ with tailored Voice, Data, and SaaS packages.</li>
+                    <li><strong>Retention.</strong> Maintained a 10/10 Net Promoter Score across the managed book.</li>
+                </ul>
+            </article>
 
-                    <div>
-                        <p style="font-size: 1.1rem; color: #f8fafc;"><strong>Retail Sales Associate & Product Lead | Optus</strong> <span class="date-inline">(Nov 2022 - Sep 2024)</span></p>
-                        <p style="color: #94a3b8; margin-top: 5px;">
-                            Delivered top-tier conversion rates through consultative selling in a high-volume retail environment. Managed store operations including opening and closing procedures, cash reconciliation, inventory audits, and premium visual merchandising to national brand standards.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <article class="exp-card" data-company="Optus — Retail" data-sub="Sales Associate &amp; Product Lead" data-date="Nov 2022 — Sep 2024">
+                <span class="exp-role-tag">Retail Sales Associate &amp; Product Lead</span>
+                <ul>
+                    <li><strong>Consultative selling.</strong> Delivered top-tier conversion in a high-volume retail floor through needs-first product matching.</li>
+                    <li><strong>Store operations.</strong> Ran opening/closing procedures, cash reconciliation, and inventory audits.</li>
+                    <li><strong>Visual standards.</strong> Maintained premium merchandising to national brand guidelines.</li>
+                </ul>
+            </article>
 
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="education" class="bg-dark">
-        <div class="container">
-            <h2 class="section-title reveal">Education & Credentials</h2>
-            
-            <div class="card reveal">
-                <h3>Diploma of Information & Communication Technology</h3>
-                <p class="company">Swinburne University of Technology | Hawthorn, Melbourne, Australia</p>
-                <p>Jan 2022 - Feb 2024</p>
+<!-- ============ CREDENTIALS (horizontal scroll gallery) ============ -->
+<section id="credentials" class="credentials">
+    <div class="container">
+        <p class="eyebrow reveal">CREDENTIALS</p>
+        <h2 class="section-head reveal">Education &amp; certifications</h2>
+    </div>
+    <div class="cred-rail">
+        <div class="cred-track">
+
+            <div class="cred-card cred-card--degree">
+                <span class="cred-kicker">Diploma</span>
+                <h3>Information &amp; Communication Technology</h3>
+                <p>Swinburne University of Technology<br>Hawthorn, Melbourne, Australia</p>
+                <span class="cred-date">Jan 2022 — Feb 2024</span>
             </div>
 
-            <h3 class="reveal" style="margin-top: 30px; margin-bottom: 15px;">Digital Certifications</h3>
-            
-            <div class="cert-grid reveal">
-                
-                <div class="cert-item">
-                    <div class="pdf-icon-box"><i class="fas fa-file-pdf"></i></div>
-                    <h4>AWS Generative AI Applications</h4>
-                    <a href="Certificate of AI.jpg" target="_blank" class="pdf-link">View PDF <i class="fas fa-external-link-alt"></i></a>
-                </div>
-                
-                <div class="cert-item">
-                    <div class="pdf-icon-box"><i class="fas fa-file-pdf"></i></div>
-                    <h4>AI Fundamentals and the Cloud</h4>
-                    <a href="Certificate of AI.jpg" target="_blank" class="pdf-link">View PDF <i class="fas fa-external-link-alt"></i></a>
-                </div>
+            <a class="cred-card" href="Certificate of AI.jpg" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/></svg>
+                <h3>AWS Generative AI Applications</h3>
+                <span class="cred-link">View certificate <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+            </a>
 
-                <div class="cert-item">
-                    <div class="pdf-icon-box"><i class="fas fa-file-pdf"></i></div>
-                    <h4>Digital Marketing</h4>
-                    <a href="Digital Marketing.pdf" target="_blank" class="pdf-link">View PDF <i class="fas fa-external-link-alt"></i></a>
-                </div>
-                
-                <div class="cert-item">
-                    <div class="pdf-icon-box"><i class="fas fa-file-pdf"></i></div>
-                    <h4>Mobile App Marketing</h4>
-                    <a href="App develpoment.pdf" target="_blank" class="pdf-link">View PDF <i class="fas fa-external-link-alt"></i></a>
-                </div>
+            <a class="cred-card" href="Certificate of AI.jpg" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/></svg>
+                <h3>AI Fundamentals and the Cloud</h3>
+                <span class="cred-link">View certificate <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+            </a>
 
-            </div>
+            <a class="cred-card" href="Digital Marketing.pdf" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/></svg>
+                <h3>Digital Marketing</h3>
+                <span class="cred-link">View certificate <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+            </a>
+
+            <a class="cred-card" href="App develpoment.pdf" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/></svg>
+                <h3>Mobile App Marketing</h3>
+                <span class="cred-link">View certificate <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+            </a>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="skills">
-        <div class="container grid-2 reveal">
-            <div>
-                <h2 class="section-title">Core Competencies</h2>
+<!-- ============ SKILLS ============ -->
+<section class="skills">
+    <div class="container skills-grid">
+        <div class="skills-head reveal">
+            <p class="eyebrow">CAPABILITIES</p>
+            <h2 class="section-head">Where I operate</h2>
+            <p class="skills-copy">From first outbound touch to multi-year renewal — plus the systems and stack that keep a pipeline honest.</p>
+        </div>
+        <div class="skills-cloud">
+            <div class="tag-group reveal">
+                <h4>Sales &amp; Strategy</h4>
                 <div class="tags">
-                    <span>B2B & B2C Sales</span>
-                    <span>Account Management</span>
-                    <span>Full-cycle Sales Ownership</span>
-                    <span>Consultative Selling</span>
-                    <span>Pipeline Management</span>
-                    <span>Cross-sell & Upsell</span>
-                    <span>Lead Generation</span>
-                    <span>Contract Negotiation</span>
-                    <span>Strategic Partnerships</span>
-                    <span>Multi-channel Outbound</span>
-                    <span>Market Expansion</span>
-                    <span>Stakeholder Engagement</span>
-                    <span>5G / NBN Telecommunications</span>
-                    <span>Salesforce</span>
-                    <span>Citrix Jarvis</span>
-                    <span>Performio</span>
-                    <span>iOS & Android Ecosystems</span>
-                    <span>Microsoft Office</span>
-                    <span>Data Analytics</span>
-                    <span>Inventory Control</span>
-                    <span>Visual Merchandising</span>
-                    <span>Conflict Resolution</span>
-                    <span>Team Enablement</span>
-                    <span>KPI Reporting</span>
+                    <span>B2B &amp; B2C Sales</span><span>Account Management</span><span>Full-cycle Ownership</span>
+                    <span>Consultative Selling</span><span>Pipeline Management</span><span>Cross-sell &amp; Upsell</span>
+                    <span>Lead Generation</span><span>Contract Negotiation</span><span>Strategic Partnerships</span>
+                    <span>Multi-channel Outbound</span><span>Market Expansion</span><span>Stakeholder Engagement</span>
                 </div>
             </div>
-            <div>
-                <h2 class="section-title">Activities & Interests</h2>
+            <div class="tag-group reveal">
+                <h4>Tools &amp; Systems</h4>
                 <div class="tags">
-                    <span>Cricket</span>
-                    <span>Basketball</span>
-                    <span>Swimming</span>
-                    <span>Outdoor Sports</span>
-                    <span>Travel</span>
-                    <span>Reading</span>
-                    <span>Video Games</span>
-                    <span>Art</span>
+                    <span>Salesforce</span><span>Citrix Jarvis</span><span>Performio</span><span>Microsoft Office</span>
+                    <span>Data Analytics</span><span>KPI Reporting</span><span>5G / NBN Telecom</span>
+                </div>
+            </div>
+            <div class="tag-group reveal">
+                <h4>Outside Work</h4>
+                <div class="tags">
+                    <span>Cricket</span><span>Basketball</span><span>Swimming</span><span>Travel</span>
+                    <span>Reading</span><span>Video Games</span><span>Art</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="profile" class="bg-dark">
-        <div class="container">
-            <h2 class="section-title reveal">Current Focus</h2>
-            <div class="grid-2 reveal">
-                <div class="card">
-                    <h3>Revenue Growth</h3>
-                    <p>Building pipeline and partnerships for mid-market and enterprise clients through focused outbound strategy, qualification, and consultative deal cycles.</p>
-                </div>
-                <div class="card">
-                    <h3>Business Technology</h3>
-                    <p>Combining telecom, SaaS, CRM, and mobile ecosystem knowledge to align technical solutions with measurable business outcomes.</p>
-                </div>
-            </div>
+<!-- ============ CLOSING CTA ============ -->
+<footer class="closing">
+    <div class="container">
+        <p class="eyebrow light reveal">LET'S TALK</p>
+        <h2 class="closing-headline reveal">
+            Bring me a number<br>worth chasing.
+        </h2>
+        <a href="mailto:shrudap@gmail.com" class="magnetic-btn reveal">
+            <span>Email me</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+        <div class="closing-meta reveal">
+            <span>shrudap@gmail.com</span>
+            <span>+91 98250 36396</span>
+            <span>Gujarat, India</span>
         </div>
-    </section>
+        <p class="closing-copyright">© 2026 Shrudam D. Prajapati</p>
+    </div>
+</footer>
 
-    <footer>
-        <p>&copy; 2026 Shrudam D. Prajapati</p>
-    </footer>
-
-    <script>
-        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            document.querySelectorAll('.reveal').forEach((el) => { el.style.opacity = '1'; });
-        } else {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const revealEls = document.querySelectorAll('.reveal');
-
-        // Safety net: if anything goes wrong (slow assets, CDN hiccup, script error),
-        // force everything visible after a short delay so the page never gets stuck blank.
-        let revealed = false;
-        function forceReveal() {
-            if (revealed) return;
-            revealed = true;
-            gsap.set('.reveal', { opacity: 1, y: 0, clearProps: 'transform' });
-            gsap.set('.hero h1, .hero .subtitle, .contact-bar span, .hero .btn', { opacity: 1, y: 0, clearProps: 'transform' });
-        }
-        const safetyTimer = setTimeout(forceReveal, 1800);
-
-        try {
-            if (prefersReducedMotion) {
-                forceReveal();
-                clearTimeout(safetyTimer);
-            } else {
-
-                /* ---------- HERO LOAD-IN (fast, snappy) ---------- */
-                const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-                heroTl
-                    .from('.hero h1', { y: 24, opacity: 0, duration: 0.5 })
-                    .from('.hero .subtitle', { y: 16, opacity: 0, duration: 0.4 }, '-=0.25')
-                    .from('.contact-bar span', { y: 10, opacity: 0, duration: 0.35, stagger: 0.06 }, '-=0.2')
-                    .from('.hero .btn', { y: 10, opacity: 0, duration: 0.35 }, '-=0.15');
-
-                gsap.set('.aurora-light', { opacity: 0 });
-                gsap.to('.aurora-light', { opacity: 1, duration: 1.4, stagger: 0.2, ease: 'power1.out' });
-
-                /* ---------- SCROLL REVEALS ---------- */
-                gsap.utils.toArray('.reveal').forEach((el) => {
-                    gsap.fromTo(el,
-                        { y: 24, opacity: 0 },
-                        {
-                            y: 0, opacity: 1, duration: 0.7, ease: 'power3.out',
-                            scrollTrigger: {
-                                trigger: el,
-                                start: 'top 92%',
-                                toggleActions: 'play none none reverse',
-                                fastScrollEnd: true
-                            }
-                        }
-                    );
-                });
-
-                /* ---------- CARD STAGGER (job lists, cert grid) ---------- */
-                gsap.utils.toArray('.job-list').forEach((list) => {
-                    gsap.from(list.querySelectorAll('li'), {
-                        x: -12, opacity: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out',
-                        scrollTrigger: { trigger: list, start: 'top 90%' }
-                    });
-                });
-
-                gsap.from('.cert-item', {
-                    y: 20, opacity: 0, scale: 0.96, duration: 0.5, stagger: 0.08, ease: 'back.out(1.5)',
-                    scrollTrigger: { trigger: '.cert-grid', start: 'top 90%' }
-                });
-
-                gsap.utils.toArray('.tags').forEach((tagGroup) => {
-                    gsap.from(tagGroup.querySelectorAll('span'), {
-                        y: 10, opacity: 0, duration: 0.4, stagger: 0.03, ease: 'power2.out',
-                        scrollTrigger: { trigger: tagGroup, start: 'top 90%' }
-                    });
-                });
-
-                /* ---------- AURORA PARALLAX ON SCROLL ---------- */
-                gsap.to('.aurora-light:nth-child(1)', {
-                    y: 150, ease: 'none',
-                    scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom top', scrub: 1 }
-                });
-                gsap.to('.aurora-light:nth-child(2)', {
-                    y: 220, ease: 'none',
-                    scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom top', scrub: 1.2 }
-                });
-                gsap.to('.aurora-light:nth-child(3)', {
-                    y: 100, ease: 'none',
-                    scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom top', scrub: 0.8 }
-                });
-
-                /* ---------- NUMBER COUNT-UP (summary stats) ---------- */
-                document.querySelectorAll('.counter').forEach((counter) => {
-                    const target = parseFloat(counter.getAttribute('data-target'));
-                    const obj = { val: 0 };
-                    ScrollTrigger.create({
-                        trigger: counter,
-                        start: 'top 92%',
-                        once: true,
-                        onEnter: () => {
-                            gsap.to(obj, {
-                                val: target, duration: 1.2, ease: 'power2.out',
-                                onUpdate: () => { counter.textContent = Math.round(obj.val); }
-                            });
-                        }
-                    });
-                });
-
-                /* ---------- MAGNETIC BUTTON ---------- */
-                document.querySelectorAll('.btn').forEach((el) => {
-                    el.addEventListener('mousemove', (e) => {
-                        const rect = el.getBoundingClientRect();
-                        const relX = e.clientX - rect.left - rect.width / 2;
-                        const relY = e.clientY - rect.top - rect.height / 2;
-                        gsap.to(el, { x: relX * 0.3, y: relY * 0.4, duration: 0.4, ease: 'power2.out' });
-                    });
-                    el.addEventListener('mouseleave', () => {
-                        gsap.to(el, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.4)' });
-                    });
-                });
-
-                // Recalculate trigger positions once everything (fonts, icons) has actually loaded,
-                // so sections lower on the page don't get stuck waiting on a stale measurement.
-                window.addEventListener('load', () => {
-                    ScrollTrigger.refresh();
-                    clearTimeout(safetyTimer);
-                    revealed = true; // animations have taken over correctly, safety net no longer needed
-                });
-            }
-        } catch (err) {
-            // If GSAP/ScrollTrigger fails for any reason (CDN blocked, script error),
-            // make sure the page is still fully usable.
-            console.warn('Animation init failed, showing content without motion:', err);
-            forceReveal();
-            clearTimeout(safetyTimer);
-        }
-        }
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
