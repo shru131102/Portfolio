@@ -1,236 +1,1254 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shrudam D. Prajapati — Revenue Growth Specialist</title>
-<meta name="description" content="B2B sales and strategic partnerships portfolio of Shrudam D. Prajapati.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrudam D. Prajapati : Revenue Growth Specialist</title>
+    <meta name="description" content="Professional portfolio of Shrudam D. Prajapati, B2B Sales and Strategic Partnerships specialist.">
 
-<link rel="stylesheet" href="vendor/fonts.css">
-<link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Premium Sans Stack -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS with custom Swiss Light configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: {
+                            DEFAULT: '#0F1012',
+                            soft: '#212328',
+                            muted: '#525760'
+                        },
+                        paper: {
+                            DEFAULT: '#FAF9F5',
+                            card: '#FFFFFF',
+                            dim: '#EBEAE4',
+                            border: 'rgba(15, 16, 18, 0.08)'
+                        },
+                        accent: {
+                            DEFAULT: '#0088FF',
+                            soft: 'rgba(0, 136, 255, 0.08)',
+                            glow: 'rgba(0, 136, 255, 0.25)',
+                            hover: '#0066EE'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Bricolage Grotesque', 'Inter', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
 
-<script src="vendor/gsap.min.js"></script>
-<script src="vendor/ScrollTrigger.min.js"></script>
-<script src="vendor/lenis.min.js"></script>
-<noscript><style>.reveal,.split-char{opacity:1!important;transform:none!important;}</style></noscript>
+    <style>
+        /* Modern Swiss grid typography presets and style overrides */
+        body {
+            background-color: #FAF9F5;
+            color: #0F1012;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        /* Subtle technical graph paper pattern overlay */
+        .grid-blueprint {
+            background-image: 
+                linear-gradient(rgba(0, 136, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 136, 255, 0.02) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        /* Custom scrollbar mechanics */
+        ::-webkit-scrollbar {
+            width: 7px;
+            height: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF9F5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0088FF;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0066EE;
+        }
+
+        ::selection {
+            background: #0088FF;
+            color: #FFFFFF;
+        }
+
+        /* Interactive cards drop shadow presets */
+        .swiss-shadow {
+            box-shadow: 0 4px 20px -2px rgba(15, 16, 18, 0.04);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .swiss-shadow:hover {
+            box-shadow: 0 12px 30px -4px rgba(0, 136, 255, 0.12);
+            border-color: rgba(0, 136, 255, 0.3);
+            transform: translateY(-4px);
+        }
+
+        /* Custom Liquid Cursor Core */
+        .custom-cursor {
+            width: 8px;
+            height: 8px;
+            background-color: #0088FF;
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 100;
+            transition: width 0.3s, height 0.3s, background-color 0.3s;
+        }
+        .custom-cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 1.5px solid #0088FF;
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 99;
+            transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s;
+        }
+
+        /* Hide generic scroll elements on Horizontal tracks */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Smooth visual reveal states */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Scrolling marquee ticker keyframe configuration */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+    </style>
 </head>
-<body>
+<body class="grid-blueprint relative">
 
-<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
-
-<nav class="nav">
-    <a href="#top" class="nav-mark">SP</a>
-    <div class="nav-links">
-        <a href="#experience">Experience</a>
-        <a href="#stats">Track Record</a>
-        <a href="#credentials">Credentials</a>
-        <a href="mailto:shrudap@gmail.com" class="nav-cta">Contact</a>
+    <div class="custom-cursor hidden md:block" id="dotCursor"></div>
+    <div class="custom-cursor-follower hidden md:block flex items-center justify-center text-[8px] font-mono font-bold tracking-wider text-white select-none overflow-hidden" id="ringCursor">
+        <span id="cursorLabel" class="opacity-0 transition-opacity duration-200"></span>
     </div>
-</nav>
 
-<!-- ============ HERO ============ -->
-<header id="top" class="hero">
-    <div class="hero-stage">
-        <p class="eyebrow reveal-up">REVENUE GROWTH SPECIALIST — B2B SALES &amp; STRATEGIC PARTNERSHIPS</p>
-        <h1 class="hero-name" aria-label="Shrudam D. Prajapati">
-            <span class="line" data-line>Shrudam D.</span>
-            <span class="line" data-line>Prajapati</span>
-        </h1>
-        <svg class="growth-line" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
-            <path id="heroPath" d="M0,95 C150,95 180,40 280,55 C400,72 430,20 560,30 C700,42 740,75 850,45 C920,25 950,18 1000,10" />
-        </svg>
-        <div class="hero-meta reveal-up">
-            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg> Gujarat, India</span>
-            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg> +91 98250 36396</span>
-            <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> shrudap@gmail.com</span>
+    <!-- Beautiful drift canvas for B2B relationship networks -->
+    <canvas id="networkCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="fixed top-0 left-0 w-full h-[3px] bg-paper-dim z-50">
+        <div id="progressFill" class="h-full bg-accent w-0 origin-left transition-all duration-75"></div>
+    </div>
+
+    <!-- Minimalist Sticky Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-40 bg-paper/80 backdrop-blur-md border-b border-paper-border px-6 md:px-12 py-4 flex items-center justify-between">
+        <a href="#top" class="font-display font-black text-xl tracking-tight text-ink hover:text-accent transition-colors duration-300">SP</a>
+        
+        <!-- Navigation Menu Hooks -->
+        <div class="flex items-center gap-4 md:gap-8">
+            <a href="#experience" class="text-xs md:text-sm font-medium text-ink/70 hover:text-ink transition-colors duration-300">Experience</a>
+            <a href="#stats" class="text-xs md:text-sm font-medium text-ink/70 hover:text-ink transition-colors duration-300">Track Record</a>
+            <a href="#skills" class="text-xs md:text-sm font-medium text-ink/70 hover:text-ink transition-colors duration-300">Competencies</a>
+            <a href="#education" class="text-xs md:text-sm font-medium text-ink/70 hover:text-ink transition-colors duration-300">Education</a>
+            <a href="#certifications" class="text-xs md:text-sm font-medium text-ink/70 hover:text-ink transition-colors duration-300">Certifications</a>
+            <a href="mailto:shrudap@gmail.com" class="px-4 py-2 rounded-full bg-accent text-white hover:bg-accent-hover text-xs font-semibold transition-all duration-300">Contact</a>
         </div>
-    </div>
-    <div class="scroll-cue"><span></span> Scroll</div>
-</header>
+    </nav>
 
-<!-- ============ SUMMARY STRIP ============ -->
-<section class="summary-strip">
-    <div class="container">
-        <p class="summary-text reveal">
-            Three years turning enterprise telecom and SaaS relationships into compounding revenue at Optus Australia —
-            now opening new B2B markets for a US growth firm. The throughline: full-cycle ownership, from first cold
-            touch to renewal, and a habit of beating target.
-        </p>
-    </div>
-</section>
+    <!-- ============ HERO AREA ============ -->
+    <header id="top" class="min-h-screen flex flex-col items-center justify-center text-center relative px-6 pt-32 pb-20 bg-[radial-gradient(ellipse_90%_60%_at_50%_15%,rgba(0,136,255,0.06),transparent_65%)]">
+        <div class="max-w-[1100px] w-full">
+            
+            <!-- Special Industry Recognitions Badges -->
+            <div class="flex flex-wrap justify-center gap-3 mb-6 reveal">
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-[10px] font-mono font-bold tracking-wider text-accent uppercase">
+                    <i class="fa-brands fa-apple text-sm"></i> Apple Champion
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-[10px] font-mono font-bold tracking-wider text-blue-600 uppercase">
+                    <i class="fa-solid fa-award text-sm"></i> Samsung Elite
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-ink/5 border border-ink/10 text-[10px] font-mono font-bold tracking-wider text-ink/70 uppercase">
+                    <i class="fa-solid fa-chart-line text-xs"></i> 120% plus Target Achieved
+                </span>
+            </div>
 
-<!-- ============ STATS (pinned, scrubbed) ============ -->
-<section id="stats" class="stats-pin">
-    <div class="stats-inner">
-        <p class="eyebrow light">TRACK RECORD</p>
-        <div class="stats-chart">
-            <svg viewBox="0 0 1000 280" preserveAspectRatio="none" aria-hidden="true">
-                <path id="statPath" d="M0,250 C120,250 160,210 240,190 C340,165 380,150 460,120 C560,85 600,95 700,60 C800,28 850,40 1000,15" />
+            <!-- Title Meta -->
+            <p class="font-mono text-xs tracking-[0.2em] text-accent mb-6 font-semibold uppercase">
+                REVENUE GROWTH SPECIALIST : B2B SALES AND STRATEGIC PARTNERSHIPS
+            </p>
+
+            <!-- Hero Name Typographic Layout -->
+            <h1 class="font-display font-extrabold text-[11vw] sm:text-[8vw] md:text-[6.5vw] leading-[0.95] tracking-tight text-ink mb-6" aria-label="Shrudam D. Prajapati">
+                <span class="block overflow-hidden py-1">
+                    <span class="inline-block" data-line>Shrudam D.</span>
+                </span>
+                <span class="block overflow-hidden py-1">
+                    <span class="inline-block" data-line>Prajapati</span>
+                </span>
+            </h1>
+
+            <!-- Growth path visual asset line -->
+            <svg class="w-full max-w-[720px] h-[60px] mx-auto mb-10" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true">
+                <path id="heroPath" d="M0,95 C150,95 180,40 280,55 C400,72 430,20 560,30 C700,42 740,75 850,45 C920,25 950,18 1000,10" fill="none" stroke="#0088FF" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="1400" stroke-dashoffset="1400" />
             </svg>
+
+            <!-- Quick Metadata links -->
+            <div class="flex justify-center flex-wrap gap-6 md:gap-8 mt-4 font-mono text-xs text-ink/60">
+                <span class="flex items-center gap-2 hover:text-ink transition-colors">
+                    <i class="fa-solid fa-location-dot text-accent"></i> Gujarat, India
+                </span>
+                <a href="mailto:shrudap@gmail.com" class="flex items-center gap-2 hover:text-ink transition-colors">
+                    <i class="fa-solid fa-envelope text-accent"></i> shrudap@gmail.com
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-ink transition-colors">
+                    <i class="fa-brands fa-linkedin text-accent text-sm"></i> LinkedIn
+                </a>
+            </div>
         </div>
-        <div class="stats-grid">
-            <div class="stat">
-                <span class="stat-num" data-target="120" data-suffix="%+">0%+</span>
-                <span class="stat-label">Average quarterly target attainment at Optus</span>
-            </div>
-            <div class="stat">
-                <span class="stat-num" data-target="10" data-suffix="/10">0/10</span>
-                <span class="stat-label">Net Promoter Score maintained across the book</span>
-            </div>
-            <div class="stat">
-                <span class="stat-num" data-target="3" data-suffix="+">0+</span>
-                <span class="stat-label">Years of progressive B2B &amp; enterprise ownership</span>
-            </div>
-            <div class="stat">
-                <span class="stat-num" data-target="10" data-suffix="M+">0M+</span>
-                <span class="stat-label">Revenue tier of accounts currently targeted</span>
-            </div>
+
+        <!-- Scroll indicator asset -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 font-mono text-[10px] tracking-widest text-ink/40">
+            <span class="w-[1px] h-10 bg-gradient-to-b from-accent to-transparent animate-bounce"></span>
+            SCROLL TO DISCOVER
+        </div>
+    </header>
+
+    <!-- Giant Shweta style structural marquee banner -->
+    <div class="w-full overflow-hidden border-y border-paper-border bg-paper py-8 select-none pointer-events-none">
+        <div class="animate-marquee-track">
+            <span class="font-display font-black text-6xl md:text-8xl tracking-tighter text-transparent stroke-text opacity-15 px-4">SHRUDAM D. PRAJAPATI</span>
+            <span class="font-display font-black text-6xl md:text-8xl tracking-tighter text-accent/15 px-4">REVENUE SPECIALIST</span>
+            <span class="font-display font-black text-6xl md:text-8xl tracking-tighter text-transparent stroke-text opacity-15 px-4">B2B SALES PARTNERSHIPS</span>
+            <span class="font-display font-black text-6xl md:text-8xl tracking-tighter text-accent/15 px-4 font-outline">OPTUS EXPERT</span>
+            <!-- Duplicate content to ensure smooth scroll loop -->
+            <span class="font-display font-black text-6xl md:text-8xl tracking-tighter text-transparent stroke-text opacity-15 px-4">SHRUDAM D. PRAJAPATI</span>
+            <span class="font-display font-black text-6xl md:text-8xl tracking-tighter text-accent/15 px-4">REVENUE SPECIALIST</span>
+            <span class="font-display font-black text-6xl md:text-8xl tracking-tighter text-transparent stroke-text opacity-15 px-4">B2B SALES PARTNERSHIPS</span>
+            <span class="font-display font-black text-6xl md:text-8xl tracking-tighter text-accent/15 px-4 font-outline font-black">OPTUS EXPERT</span>
         </div>
     </div>
-</section>
 
-<!-- ============ EXPERIENCE (sticky rail swap) ============ -->
-<section id="experience" class="experience">
-    <div class="container exp-grid">
-        <div class="exp-rail">
-            <p class="eyebrow">EXPERIENCE</p>
-            <h2 class="exp-rail-title" id="railTitle">LeanSummits</h2>
-            <p class="exp-rail-sub" id="railSub">California, USA · Remote</p>
-            <p class="exp-rail-date" id="railDate">Feb 2026 — Present</p>
-        </div>
-        <div class="exp-track">
+    <style>
+        /* Text stroke styles for marquee outline design look */
+        .stroke-text {
+            -webkit-text-stroke: 1.5px #0F1012;
+            color: transparent;
+        }
+    </style>
 
-            <article class="exp-card" data-company="LeanSummits" data-sub="California, USA · Remote" data-date="Feb 2026 — Present">
-                <span class="exp-role-tag">Account Executive</span>
-                <ul>
-                    <li><strong>Multi-channel outbound.</strong> Build and run LinkedIn, email, and cold-call strategy targeting $10M+ revenue companies across logistics, healthcare, e-commerce, and automotive.</li>
-                    <li><strong>Strategic partnerships.</strong> Own the client lifecycle end to end — prospecting, qualification, deal closure, onboarding.</li>
-                    <li><strong>Market expansion.</strong> Contribute to international pipeline development for a US-based B2B growth marketing firm.</li>
-                </ul>
-            </article>
-
-            <article class="exp-card" data-company="Optus — Business Specialist" data-sub="B2B &amp; SME · Australia" data-date="Sep 2024 — Feb 2026">
-                <span class="exp-role-tag">Business Specialist, B2B &amp; SME</span>
-                <ul>
-                    <li><strong>Enterprise ownership.</strong> Primary contact for SME and enterprise clients with $5M+ revenue across telecom infrastructure, NBN rollout, and 5G fleet upgrades.</li>
-                    <li><strong>Target attainment.</strong> Exceeded quarterly sales targets by 120%+ with tailored Voice, Data, and SaaS packages.</li>
-                    <li><strong>Retention.</strong> Maintained a 10/10 Net Promoter Score across the managed book.</li>
-                </ul>
-            </article>
-
-            <article class="exp-card" data-company="Optus — Retail" data-sub="Sales Associate &amp; Product Lead" data-date="Nov 2022 — Sep 2024">
-                <span class="exp-role-tag">Retail Sales Associate &amp; Product Lead</span>
-                <ul>
-                    <li><strong>Consultative selling.</strong> Delivered top-tier conversion in a high-volume retail floor through needs-first product matching.</li>
-                    <li><strong>Store operations.</strong> Ran opening/closing procedures, cash reconciliation, and inventory audits.</li>
-                    <li><strong>Visual standards.</strong> Maintained premium merchandising to national brand guidelines.</li>
-                </ul>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-<!-- ============ CREDENTIALS (horizontal scroll gallery) ============ -->
-<section id="credentials" class="credentials">
-    <div class="container">
-        <p class="eyebrow reveal">CREDENTIALS</p>
-        <h2 class="section-head reveal">Education &amp; certifications</h2>
-    </div>
-    <div class="cred-rail">
-        <div class="cred-track">
-
-            <div class="cred-card cred-card--degree">
-                <span class="cred-kicker">Diploma</span>
-                <h3>Information &amp; Communication Technology</h3>
-                <p>Swinburne University of Technology<br>Hawthorn, Melbourne, Australia</p>
-                <span class="cred-date">Jan 2022 — Feb 2024</span>
-            </div>
-
-            <a class="cred-card" href="Certificate of AI.jpg" target="_blank" rel="noopener">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/></svg>
-                <h3>AWS Generative AI Applications</h3>
-                <span class="cred-link">View certificate <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-            </a>
-
-            <a class="cred-card" href="Certificate of AI.jpg" target="_blank" rel="noopener">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/></svg>
-                <h3>AI Fundamentals and the Cloud</h3>
-                <span class="cred-link">View certificate <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-            </a>
-
-            <a class="cred-card" href="Digital Marketing.pdf" target="_blank" rel="noopener">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/></svg>
-                <h3>Digital Marketing</h3>
-                <span class="cred-link">View certificate <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-            </a>
-
-            <a class="cred-card" href="App develpoment.pdf" target="_blank" rel="noopener">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v5h5"/></svg>
-                <h3>Mobile App Marketing</h3>
-                <span class="cred-link">View certificate <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-            </a>
-
-        </div>
-    </div>
-</section>
-
-<!-- ============ SKILLS ============ -->
-<section class="skills">
-    <div class="container skills-grid">
-        <div class="skills-head reveal">
-            <p class="eyebrow">CAPABILITIES</p>
-            <h2 class="section-head">Where I operate</h2>
-            <p class="skills-copy">From first outbound touch to multi-year renewal — plus the systems and stack that keep a pipeline honest.</p>
-        </div>
-        <div class="skills-cloud">
-            <div class="tag-group reveal">
-                <h4>Sales &amp; Strategy</h4>
-                <div class="tags">
-                    <span>B2B &amp; B2C Sales</span><span>Account Management</span><span>Full-cycle Ownership</span>
-                    <span>Consultative Selling</span><span>Pipeline Management</span><span>Cross-sell &amp; Upsell</span>
-                    <span>Lead Generation</span><span>Contract Negotiation</span><span>Strategic Partnerships</span>
-                    <span>Multi-channel Outbound</span><span>Market Expansion</span><span>Stakeholder Engagement</span>
+    <!-- ============ SUMMARY STRIP ============ -->
+    <section class="py-20 md:py-28 border-b border-paper-border bg-paper-card relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(0,136,255,0.02),transparent_40%)]"></div>
+        <div class="max-w-[1100px] mx-auto px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-3">
+                    <p class="font-mono text-xs font-bold tracking-widest text-accent uppercase">PROFESSIONAL SUMMARY</p>
                 </div>
-            </div>
-            <div class="tag-group reveal">
-                <h4>Tools &amp; Systems</h4>
-                <div class="tags">
-                    <span>Salesforce</span><span>Citrix Jarvis</span><span>Performio</span><span>Microsoft Office</span>
-                    <span>Data Analytics</span><span>KPI Reporting</span><span>5G / NBN Telecom</span>
-                </div>
-            </div>
-            <div class="tag-group reveal">
-                <h4>Outside Work</h4>
-                <div class="tags">
-                    <span>Cricket</span><span>Basketball</span><span>Swimming</span><span>Travel</span>
-                    <span>Reading</span><span>Video Games</span><span>Art</span>
+                <div class="lg:col-span-9">
+                    <p class="reveal font-display font-medium text-2xl sm:text-3xl leading-[1.35] tracking-tight text-ink">
+                        High performing B2B sales professional with three plus years of progressive experience at Optus Australia, consistently exceeding revenue targets by 120% plus while maintaining a 10/10 NPS. Proven track record across full cycle enterprise account management from lead generation and needs analysis through contract negotiation and long term retention. Recognized as both Apple Champion and Samsung Elite for advanced technical expertise. Currently driving client acquisition and multi sector strategic partnerships for a US based growth marketing firm targeting $10M plus revenue companies.
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ============ CLOSING CTA ============ -->
-<footer class="closing">
-    <div class="container">
-        <p class="eyebrow light reveal">LET'S TALK</p>
-        <h2 class="closing-headline reveal">
-            Bring me a number<br>worth chasing.
-        </h2>
-        <a href="mailto:shrudap@gmail.com" class="magnetic-btn reveal">
-            <span>Email me</span>
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
-        </a>
-        <div class="closing-meta reveal">
-            <span>shrudap@gmail.com</span>
-            <span>+91 98250 36396</span>
-            <span>Gujarat, India</span>
+    <!-- ============ STATS TRACK RECORD (Immediate scroll triggers) ============ -->
+    <section id="stats" class="py-24 bg-paper border-b border-paper-border">
+        <div class="max-w-[1100px] mx-auto w-full px-8">
+            <p class="font-mono text-xs tracking-wider text-accent font-semibold uppercase mb-4 text-center">TRACK RECORD</p>
+            <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink text-center tracking-tight mb-8">Metrics that Drive Growth</h2>
+            
+            <!-- Strategic target growth representation path -->
+            <div class="my-12 opacity-90 max-w-[900px] mx-auto">
+                <svg viewBox="0 0 1000 280" class="w-full h-[180px]" preserveAspectRatio="none" aria-hidden="true">
+                    <path id="statPath" d="M0,250 C120,250 160,210 240,190 C340,165 380,150 460,120 C560,85 600,95 700,60 C800,28 850,40 1000,15" fill="none" stroke="#0088FF" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="1800" stroke-dashoffset="1800" />
+                </svg>
+            </div>
+            
+            <!-- Performance metrics readout grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+                <div class="p-6 rounded-2xl bg-paper-card border border-paper-border swiss-shadow cursor-pointer" data-cursor="SCALE">
+                    <span class="block font-display font-extrabold text-3xl sm:text-4xl text-ink" id="stat-1" data-target="120" data-suffix="%+">0%+</span>
+                    <span class="block mt-2 text-xs font-mono text-ink/60 uppercase tracking-wider leading-relaxed">Average quarterly target met at Optus</span>
+                </div>
+                <div class="p-6 rounded-2xl bg-paper-card border border-paper-border swiss-shadow cursor-pointer" data-cursor="SCALE">
+                    <span class="block font-display font-extrabold text-3xl sm:text-4xl text-ink" id="stat-2" data-target="10" data-suffix="/10">0/10</span>
+                    <span class="block mt-2 text-xs font-mono text-ink/60 uppercase tracking-wider leading-relaxed">Net Promoter Score maintained across the book</span>
+                </div>
+                <div class="p-6 rounded-2xl bg-paper-card border border-paper-border swiss-shadow cursor-pointer" data-cursor="SCALE">
+                    <span class="block font-display font-extrabold text-3xl sm:text-4xl text-ink" id="stat-3" data-target="3" data-suffix="+">0+</span>
+                    <span class="block mt-2 text-xs font-mono text-ink/60 uppercase tracking-wider leading-relaxed">Years of progressive B2B sales ownership</span>
+                </div>
+                <div class="p-6 rounded-2xl bg-paper-card border border-paper-border swiss-shadow cursor-pointer" data-cursor="SCALE">
+                    <span class="block font-display font-extrabold text-3xl sm:text-4xl text-ink" id="stat-4" data-target="10" data-suffix="M+">0M+</span>
+                    <span class="block mt-2 text-xs font-mono text-ink/60 uppercase tracking-wider leading-relaxed">Revenue tier of accounts currently targeted</span>
+                </div>
+            </div>
         </div>
-        <p class="closing-copyright">© 2026 Shrudam D. Prajapati</p>
-    </div>
-</footer>
+    </section>
 
-<script src="script.js"></script>
+    <!-- ============ WORK EXPERIENCE ============ -->
+    <section id="experience" class="py-24 md:py-32 bg-paper-card">
+        <div class="max-w-[1100px] mx-auto px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                
+                <!-- Sticky Left Rail Tracker -->
+                <div class="lg:col-span-4 lg:sticky lg:top-28 self-start space-y-4">
+                    <p class="font-mono text-xs tracking-wider text-accent font-semibold uppercase">WORK HISTORY</p>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-4xl tracking-tight text-ink leading-tight" id="railTitle">LeanSummits</h2>
+                    <p class="text-ink/60 text-sm font-semibold" id="railSub">California, USA · Remote</p>
+                    <p class="font-mono text-xs text-accent font-bold mt-2" id="railDate">Feb 2026 to Present</p>
+                    
+                    <div class="pt-6 hidden lg:block">
+                        <div class="relative pl-6 border-l-2 border-paper-dim space-y-4">
+                            <div class="relative">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-accent border-4 border-paper-card"></div>
+                                <span class="text-xs font-mono font-bold text-accent">Active Position</span>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-paper-dim border-4 border-paper-card"></div>
+                                <span class="text-xs font-mono text-ink/40">Business Specialist</span>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-paper-dim border-4 border-paper-card"></div>
+                                <span class="text-xs font-mono text-ink/40">Sales Associate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scrolling Right Track -->
+                <div class="lg:col-span-8 space-y-12">
+
+                    <!-- Position 1 -->
+                    <article class="p-8 rounded-2xl bg-paper border border-paper-border swiss-shadow space-y-6 exp-card" data-company="LeanSummits" data-sub="California, USA · Remote" data-date="Feb 2026 to Present">
+                        <div class="flex justify-between items-start flex-wrap gap-3">
+                            <span class="px-3.5 py-1.5 rounded-full bg-accent-soft text-accent text-xs font-mono font-semibold tracking-wide">Account Executive</span>
+                            <span class="text-xs font-mono text-ink/40">Feb 2026 to Present</span>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="text-ink/80 text-sm sm:text-base leading-relaxed">
+                                <strong class="text-ink font-bold block mb-1">Multi channel Outbound Execution:</strong> Build and execute multi channel outbound strategies (LinkedIn, email, cold outreach) targeting $10M plus revenue companies across logistics, healthcare, ecommerce, and automotive sectors.
+                            </li>
+                            <li class="text-ink/80 text-sm sm:text-base leading-relaxed">
+                                <strong class="text-ink font-bold block mb-1">End to end Client Lifecycle:</strong> Develop strategic partnerships and manage end to end client lifecycle from prospecting and qualification through to deal closure and onboarding.
+                            </li>
+                            <li class="text-ink/80 text-sm sm:text-base leading-relaxed">
+                                <strong class="text-ink font-bold block mb-1">Market Strategy Pipeline:</strong> Contribute to international market expansion and pipeline development initiatives for a US based B2B growth marketing firm.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <!-- Position 2 -->
+                    <article class="p-8 rounded-2xl bg-paper border border-paper-border swiss-shadow space-y-6 exp-card" data-company="Optus" data-sub="Business Specialist B2B and SME · Melbourne, Australia" data-date="Sep 2024 to Feb 2026">
+                        <div class="flex justify-between items-start flex-wrap gap-3">
+                            <div class="flex items-center gap-2">
+                                <span class="px-3.5 py-1.5 rounded-full bg-accent-soft text-accent text-xs font-mono font-semibold tracking-wide">Business Specialist B2B and SME</span>
+                                <span class="px-2.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[9px] font-mono font-bold text-blue-600 uppercase">Samsung Elite</span>
+                            </div>
+                            <span class="text-xs font-mono text-ink/40">Sep 2024 to Feb 2026</span>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="text-ink/80 text-sm sm:text-base leading-relaxed">
+                                <strong class="text-ink font-bold block mb-1">Key Portfolio Management:</strong> Managed an exclusive portfolio of SME and enterprise clients with over $5M revenue as primary point of contact for telecom infrastructure, NBN rollout, and 5G fleet upgrades.
+                            </li>
+                            <li class="text-ink/80 text-sm sm:text-base leading-relaxed">
+                                <strong class="text-ink font-bold block mb-1">120% plus Quota Attainment:</strong> Consistently exceeded quarterly sales targets by 120% plus, delivering tailored solution packages (Voice, Data, SaaS) aligned to complex business needs.
+                            </li>
+                            <li class="text-ink/80 text-sm sm:text-base leading-relaxed">
+                                <strong class="text-ink font-bold block mb-1">Strategic Account Health:</strong> Achieved 10/10 Net Promoter Score through proactive account management, high level technical escalation handling, and strategic contract renewal programs.
+                            </li>
+                            <li class="text-ink/80 text-sm sm:text-base leading-relaxed">
+                                <strong class="text-ink font-bold block mb-1">Full Cycle Sales Process:</strong> Owned full cycle sales process: lead generation, needs analysis, solution design, contract negotiation, and post sale onboarding.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <!-- Position 3 -->
+                    <article class="p-8 rounded-2xl bg-paper border border-paper-border swiss-shadow space-y-6 exp-card" data-company="Optus" data-sub="Sales Associate · Melbourne, Australia" data-date="Nov 2022 to Sep 2024">
+                        <div class="flex justify-between items-start flex-wrap gap-3">
+                            <div class="flex items-center gap-2">
+                                <span class="px-3.5 py-1.5 rounded-full bg-accent-soft text-accent text-xs font-mono font-semibold tracking-wide">Sales Associate</span>
+                                <span class="px-2.5 py-1 rounded-full bg-accent/10 border border-accent/20 text-[9px] font-mono font-bold text-accent uppercase">Apple Champion</span>
+                            </div>
+                            <span class="text-xs font-mono text-ink/40">Nov 2022 to Sep 2024</span>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="text-ink/80 text-sm sm:text-base leading-relaxed">
+                                <strong class="text-ink font-bold block mb-1">Consultative Selling conversion:</strong> Delivered consistently top tier individual conversion rates through needs based consultative selling in a high volume environment.
+                            </li>
+                            <li class="text-ink/80 text-sm sm:text-base leading-relaxed">
+                                <strong class="text-ink font-bold block mb-1">Store operations:</strong> Managed daily store operations including opening and closing procedures, cash reconciliation, inventory audit, and premium visual merchandising to national brand standards.
+                            </li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SKILLS & CORE COMPETENCIES ============ -->
+    <section id="skills" class="py-24 bg-paper border-y border-paper-border">
+        <div class="max-w-[1100px] mx-auto px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <div class="lg:col-span-4 space-y-4">
+                    <p class="font-mono text-xs tracking-wider text-accent font-semibold uppercase">CAPABILITIES</p>
+                    <h2 class="font-display font-extrabold text-3xl tracking-tight text-ink">B2B Core Competency Matrix</h2>
+                    <p class="text-ink/60 text-sm leading-relaxed max-w-[320px]">A balance of enterprise relationship strategy, modern CRM technical setups, and full cycle pipeline execution.</p>
+                </div>
+
+                <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    
+                    <!-- Sales Strategy Group -->
+                    <div class="p-6 rounded-2xl bg-paper-card border border-paper-border space-y-4">
+                        <div class="flex items-center gap-3 text-accent">
+                            <i class="fa-solid fa-chart-line text-lg"></i>
+                            <h4 class="font-display font-bold text-base text-ink">Sales and Strategy</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">B2B and B2C Account Management</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Consultative Selling</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Pipeline Management</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Contract Negotiation</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Full cycle Sales Ownership</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Lead Generation</span>
+                        </div>
+                    </div>
+
+                    <!-- Technical Core Group -->
+                    <div class="p-6 rounded-2xl bg-paper-card border border-paper-border space-y-4">
+                        <div class="flex items-center gap-3 text-accent">
+                            <i class="fa-solid fa-laptop-code text-lg"></i>
+                            <h4 class="font-display font-bold text-base text-ink">Technical and Systems</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Salesforce CRM</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Citrix Jarvis</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Performio</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">5G and NBN Telecom Architecture</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Data Analytics and Reporting</span>
+                        </div>
+                    </div>
+
+                    <!-- Strategic Partnerships Group -->
+                    <div class="p-6 rounded-2xl bg-paper-card border border-paper-border space-y-4">
+                        <div class="flex items-center gap-3 text-accent">
+                            <i class="fa-solid fa-handshake text-lg"></i>
+                            <h4 class="font-display font-bold text-base text-ink">Partnerships</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Strategic Partnership Setup</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Multi channel Outbound</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Market Expansion</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Stakeholder Engagement</span>
+                        </div>
+                    </div>
+
+                    <!-- Operational Enablement Group -->
+                    <div class="p-6 rounded-2xl bg-paper-card border border-paper-border space-y-4">
+                        <div class="flex items-center gap-3 text-accent">
+                            <i class="fa-solid fa-arrows-spin text-lg"></i>
+                            <h4 class="font-display font-bold text-base text-ink">Operations and Enablement</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Inventory Control</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Visual Merchandising</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Conflict Resolution</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">Team Enablement</span>
+                            <span class="px-2.5 py-1.5 bg-paper rounded-lg text-xs text-ink/80 border border-paper-border hover:border-accent hover:text-accent transition-colors">KPI Reporting</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION: EDUCATION ============ -->
+    <section id="education" class="py-24 bg-paper-card border-b border-paper-border">
+        <div class="max-w-[1100px] mx-auto px-8">
+            <div class="mb-12">
+                <p class="font-mono text-xs tracking-wider text-accent font-semibold uppercase mb-2">ACADEMICS</p>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink tracking-tight">Education Timeline</h2>
+            </div>
+
+            <!-- Swinburne Technical degree module -->
+            <div class="relative p-8 md:p-12 rounded-3xl bg-paper border border-paper-border flex flex-col md:flex-row items-start justify-between gap-8 swiss-shadow">
+                <div class="space-y-4 max-w-xl">
+                    <div class="flex items-center gap-2">
+                        <span class="px-3 py-1 bg-accent-soft border border-accent/20 text-accent font-mono text-[10px] font-bold rounded-md uppercase">Tertiary Diploma</span>
+                        <span class="text-xs font-mono text-ink/40"><i class="fa-solid fa-clock-retro"></i> Jan 2022 to Feb 2024</span>
+                    </div>
+                    <h3 class="font-display font-bold text-2xl text-ink">Diploma of Information and Communication Technology</h3>
+                    <p class="font-mono text-xs text-ink/50"><i class="fa-solid fa-school text-accent"></i> Swinburne University of Technology, Hawthorn, Melbourne, Australia</p>
+                    <p class="text-ink/70 text-sm leading-relaxed font-sans">
+                        Acquired foundation systems engineering, relational database management, data communication protocols, cloud setups, and technical client enablement methodologies, merging enterprise technology tools with operational sales execution.
+                    </p>
+                </div>
+                <div class="flex-shrink-0 bg-paper-card p-6 rounded-2xl border border-paper-border flex flex-col items-center justify-center text-center w-full md:w-48">
+                    <i class="fa-solid fa-graduation-cap text-accent text-3xl mb-3"></i>
+                    <span class="text-xs font-bold font-mono text-ink">Hawthorn Campus</span>
+                    <span class="text-[10px] text-ink/40 mt-1">Melbourne, VIC</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION: CERTIFICATIONS ============ -->
+    <section id="certifications" class="py-24 bg-paper border-b border-paper-border relative">
+        <div class="max-w-[1100px] mx-auto px-8 relative">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4">
+                <div>
+                    <p class="font-mono text-xs tracking-wider text-accent font-semibold uppercase mb-2">VERIFIED SKILLS</p>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink tracking-tight">Certifications and Credentials</h2>
+                    <p class="text-ink/60 text-xs mt-2">Click to review credential descriptors or generate a digital certificate.</p>
+                </div>
+                
+                <!-- Scroll Assist Controllers -->
+                <div class="flex gap-2">
+                    <button onclick="scrollCertificates('left')" class="w-10 h-10 rounded-full border border-paper-border bg-paper-card hover:bg-accent-soft hover:text-accent transition-colors flex items-center justify-center shadow-sm" data-cursor="SCALE">
+                        <i class="fa-solid fa-chevron-left text-sm"></i>
+                    </button>
+                    <button onclick="scrollCertificates('right')" class="w-10 h-10 rounded-full border border-paper-border bg-paper-card hover:bg-accent-soft hover:text-accent transition-colors flex items-center justify-center shadow-sm" data-cursor="SCALE">
+                        <i class="fa-solid fa-chevron-right text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Credentials responsive scrolling track -->
+            <div id="certRail" class="cred-rail overflow-x-auto no-scrollbar playbook-panel-holder pb-6 flex gap-6 snap-x snap-mandatory scroll-smooth">
+                
+                <!-- Cert Card 1 -->
+                <div onclick="openModal('aws-genai')" class="flex-shrink-0 w-[290px] min-h-[240px] bg-paper-card border border-paper-border rounded-2xl p-6 flex flex-col justify-between snap-start hover:border-accent hover:scale-[1.02] transition-all duration-300 cursor-pointer swiss-shadow" data-cursor="VIEW">
+                    <div>
+                        <span class="font-mono text-[10px] tracking-widest font-extrabold text-accent uppercase">AWS Partner</span>
+                        <h3 class="font-display font-bold text-lg text-ink mt-3">AWS Generative AI Applications</h3>
+                        <p class="text-ink/60 text-xs mt-2 leading-relaxed">Specialization covering foundation models, cloud orchestration, and AI deployment.</p>
+                    </div>
+                    <span class="text-accent font-mono text-[11px] flex items-center gap-1.5 pt-4 border-t border-paper-border mt-4">
+                        Verify Credential <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </span>
+                </div>
+
+                <!-- Cert Card 2 -->
+                <div onclick="openModal('ai-cloud')" class="flex-shrink-0 w-[290px] min-h-[240px] bg-paper-card border border-paper-border rounded-2xl p-6 flex flex-col justify-between snap-start hover:border-accent hover:scale-[1.02] transition-all duration-300 cursor-pointer swiss-shadow" data-cursor="VIEW">
+                    <div>
+                        <span class="font-mono text-[10px] tracking-widest font-extrabold text-accent uppercase">Cloud Architecture</span>
+                        <h3 class="font-display font-bold text-lg text-ink mt-3">AI Fundamentals and the Cloud</h3>
+                        <p class="text-ink/60 text-xs mt-2 leading-relaxed">Infrastructure cloud environments, database scaling, and business virtualization.</p>
+                    </div>
+                    <span class="text-accent font-mono text-[11px] flex items-center gap-1.5 pt-4 border-t border-paper-border mt-4">
+                        Verify Credential <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </span>
+                </div>
+
+                <!-- Cert Card 3 -->
+                <div onclick="openModal('digital-marketing')" class="flex-shrink-0 w-[290px] min-h-[240px] bg-paper-card border border-paper-border rounded-2xl p-6 flex flex-col justify-between snap-start hover:border-accent hover:scale-[1.02] transition-all duration-300 cursor-pointer swiss-shadow" data-cursor="VIEW">
+                    <div>
+                        <span class="font-mono text-[10px] tracking-widest font-extrabold text-accent uppercase">Marketing Industry</span>
+                        <h3 class="font-display font-bold text-lg text-ink mt-3">Digital Marketing</h3>
+                        <p class="text-ink/60 text-xs mt-2 leading-relaxed">B2B positioning, paid conversion, target analysis, and client acquisition pipelines.</p>
+                    </div>
+                    <span class="text-accent font-mono text-[11px] flex items-center gap-1.5 pt-4 border-t border-paper-border mt-4">
+                        Verify Credential <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </span>
+                </div>
+
+                <!-- Cert Card 4 -->
+                <div onclick="openModal('mobile-app')" class="flex-shrink-0 w-[290px] min-h-[240px] bg-paper-card border border-paper-border rounded-2xl p-6 flex flex-col justify-between snap-start hover:border-accent hover:scale-[1.02] transition-all duration-300 cursor-pointer swiss-shadow" data-cursor="VIEW">
+                    <div>
+                        <span class="font-mono text-[10px] tracking-widest font-extrabold text-accent uppercase">Mobile Growth</span>
+                        <h3 class="font-display font-bold text-lg text-ink mt-3">Mobile App Marketing</h3>
+                        <p class="text-ink/60 text-xs mt-2 leading-relaxed">Lifecycle tracking, user acquisition funnels, retention math, and brand positioning.</p>
+                    </div>
+                    <span class="text-accent font-mono text-[11px] flex items-center gap-1.5 pt-4 border-t border-paper-border mt-4">
+                        Verify Credential <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </span>
+                </div>
+
+            </div>
+            
+            <!-- Horizontal scroll track indicator visual -->
+            <div class="w-full bg-paper-dim h-[2px] mt-2 rounded overflow-hidden relative">
+                <div id="scrollBarIndicator" class="h-full bg-accent absolute left-0 top-0 transition-all duration-100" style="width: 25%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION: COLLABORATORS & FEEDBACK ============ -->
+    <section class="py-24 bg-paper-card border-b border-paper-border">
+        <div class="max-w-[1100px] mx-auto px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <p class="font-mono text-xs tracking-wider text-accent font-semibold uppercase">CLIENT ADVOCACY</p>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink tracking-tight mt-2">Hear From Collaborators</h2>
+                <p class="text-ink/60 text-sm mt-3">Authentic feedback from enterprise accounts, SME partners, and executive directors regarding strategic sales delivery.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 rounded-3xl bg-paper border border-paper-border relative space-y-6 swiss-shadow">
+                    <span class="text-5xl text-accent font-display block select-none">“</span>
+                    <p class="text-ink/80 text-base italic leading-relaxed font-sans">
+                        Shrudam has a highly thoughtful and methodical approach to client needs. His unique ability to translate complicated technical specifications into seamless business solutions made our corporate 5G and NBN network migration perfectly simple.
+                    </p>
+                    <div class="pt-6 border-t border-paper-border flex justify-between items-center">
+                        <div>
+                            <span class="block font-display font-bold text-sm text-ink">Senior Enterprise Client</span>
+                            <span class="block font-mono text-[10px] text-ink/40 uppercase">Optus Managed Portfolio</span>
+                        </div>
+                        <span class="px-2.5 py-1 rounded bg-accent-soft text-accent text-xs font-mono font-bold">10/10 NPS Verified</span>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-paper border border-paper-border relative space-y-6 swiss-shadow">
+                    <span class="text-5xl text-accent font-display block select-none">“</span>
+                    <p class="text-ink/80 text-base italic leading-relaxed font-sans">
+                        An exceptional operator who consistently met and exceeded commercial expectations during the telecom expansion project. His client satisfaction metrics, full cycle deal management, and structured partner reporting speak for themselves.
+                    </p>
+                    <div class="pt-6 border-t border-paper-border flex justify-between items-center">
+                        <div>
+                            <span class="block font-display font-bold text-sm text-ink">Commercial Business Director</span>
+                            <span class="block font-mono text-[10px] text-ink/40 uppercase">SME Infrastructure Program</span>
+                        </div>
+                        <span class="px-2.5 py-1 rounded bg-accent-soft text-accent text-xs font-mono font-bold">Corporate Elite Status</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PERSONAL INTERESTS ============ -->
+    <section class="py-24 bg-paper">
+        <div class="max-w-[1100px] mx-auto px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-4 space-y-4">
+                    <p class="font-mono text-xs tracking-wider text-accent font-semibold uppercase">OUTSIDE OF WORK</p>
+                    <h2 class="font-display font-extrabold text-3xl text-ink tracking-tight">Interests and Pursuits</h2>
+                    <p class="text-ink/60 text-sm leading-relaxed">Daily lifestyle, athletic endeavors, and recreation that keep professional focus sharp.</p>
+                </div>
+                <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2">
+                        <i class="fa-solid fa-baseball text-accent text-2xl"></i>
+                        <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Cricket</span>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2">
+                        <i class="fa-solid fa-basketball text-accent text-2xl"></i>
+                        <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Basketball</span>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2">
+                        <i class="fa-solid fa-person-swimming text-accent text-2xl"></i>
+                        <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Swimming</span>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2">
+                        <i class="fa-solid fa-mountain-sun text-accent text-2xl"></i>
+                        <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Outdoor Sports</span>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2">
+                        <i class="fa-solid fa-plane-departure text-accent text-2xl"></i>
+                        <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Travel</span>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2">
+                        <i class="fa-solid fa-book text-accent text-2xl"></i>
+                        <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Reading</span>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2">
+                        <i class="fa-solid fa-gamepad text-accent text-2xl"></i>
+                        <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Video Games</span>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2">
+                        <i class="fa-solid fa-palette text-accent text-2xl"></i>
+                        <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Art</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minimalist Footer Section -->
+    <footer class="py-16 bg-ink border-t border-paper-border text-white/50">
+        <div class="max-w-[1100px] mx-auto px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-8 text-xs font-mono">
+                <div class="text-center sm:text-left space-y-2">
+                    <p class="text-white text-sm font-bold">Shrudam D. Prajapati</p>
+                    <p>© 2026 Shrudam D. Prajapati. Built with a clean light blue palette.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="mailto:shrudap@gmail.com" class="hover:text-accent transition-colors flex items-center gap-2" data-cursor="COPY">
+                        <i class="fa-solid fa-envelope"></i> shrudap@gmail.com
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="hover:text-accent transition-colors flex items-center gap-2" data-cursor="SCALE">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                    <span class="flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot"></i> Gujarat, India
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ CREDENTIAL DETAIL MODAL LIGHTBOX ============ -->
+    <div id="credentialModal" class="fixed inset-0 bg-ink/75 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden opacity-0 transition-all duration-500">
+        <div class="w-full max-w-xl bg-paper-card rounded-3xl border border-paper-border p-6 sm:p-10 relative overflow-hidden shadow-2xl transform scale-95 transition-all duration-500" id="modalFrame">
+            
+            <!-- Close Modal -->
+            <button onclick="closeModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-paper border border-paper-border flex items-center justify-center text-ink/50 hover:text-accent transition-colors" data-cursor="SCALE">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            
+            <div id="modalContent" class="space-y-6">
+                <!-- Filled dynamically by runtime handler -->
+            </div>
+        </div>
+    </div>
+
+    <!-- GSAP Animations Plugins & Library via public CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        // Check user preferences for system motions
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* -----------------------------------------------------
+           HIGH PERFORMANCE B2B CONNECTION CANVAS SCENE
+        ----------------------------------------------------- */
+        const canvas = document.getElementById('networkCanvas');
+        const ctx = canvas?.getContext('2d');
+        let points = [];
+        const maxPoints = window.innerWidth < 768 ? 20 : 45;
+        let mousePosition = { x: null, y: null };
+
+        function initializeCanvas() {
+            if (!canvas || !ctx) return;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            points = [];
+
+            for (let i = 0; i < maxPoints; i++) {
+                points.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4,
+                    radius: Math.random() * 2 + 1.5
+                });
+            }
+        }
+
+        function drawConnections() {
+            if (!ctx || !canvas) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw and update connection nodes
+            points.forEach((point) => {
+                ctx.beginPath();
+                ctx.arc(point.x, point.y, point.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 136, 255, 0.4)';
+                ctx.fill();
+
+                point.x += point.vx;
+                point.y += point.vy;
+
+                // Canvas boundaries bounce
+                if (point.x < 0 || point.x > canvas.width) point.vx *= -1;
+                if (point.y < 0 || point.y > canvas.height) point.vy *= -1;
+
+                // Magnet node gently toward cursor position
+                if (mousePosition.x !== null && mousePosition.y !== null) {
+                    const dx = mousePosition.x - point.x;
+                    const dy = mousePosition.y - point.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 180) {
+                        point.x += dx * 0.01;
+                        point.y += dy * 0.01;
+                    }
+                }
+            });
+
+            // Draw linkage vectors between adjacent nodes
+            for (let i = 0; i < points.length; i++) {
+                for (let j = i + 1; j < points.length; j++) {
+                    const dx = points[i].x - points[j].x;
+                    const dy = points[i].y - points[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 130) {
+                        ctx.beginPath();
+                        ctx.moveTo(points[i].x, points[i].y);
+                        ctx.lineTo(points[j].x, points[j].y);
+                        ctx.strokeStyle = `rgba(0, 136, 255, ${0.12 * (1 - distance / 130)})`;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(drawConnections);
+        }
+
+        if (canvas && !reducedMotion) {
+            initializeCanvas();
+            drawConnections();
+            window.addEventListener('resize', initializeCanvas);
+            window.addEventListener('mousemove', (e) => {
+                mousePosition.x = e.clientX;
+                mousePosition.y = e.clientY;
+            });
+            window.addEventListener('mouseleave', () => {
+                mousePosition.x = null;
+                mousePosition.y = null;
+            });
+        }
+
+        /* -----------------------------------------------------
+           GENZ MAGNETIC LIQUID CURSOR CONTROLLERS
+        ----------------------------------------------------- */
+        const dotCursor = document.getElementById('dotCursor');
+        const ringCursor = document.getElementById('ringCursor');
+        const cursorLabel = document.getElementById('cursorLabel');
+
+        let targetX = 0, targetY = 0;
+        let ringX = 0, ringY = 0;
+
+        if (dotCursor && ringCursor && !reducedMotion) {
+            window.addEventListener('mousemove', (e) => {
+                targetX = e.clientX;
+                targetY = e.clientY;
+                dotCursor.style.left = `${targetX}px`;
+                dotCursor.style.top = `${targetY}px`;
+            });
+
+            // Dampen follow logic for liquid delay behavior
+            const animateRingCursor = () => {
+                const speedCoefficient = 0.16;
+                ringX += (targetX - ringX) * speedCoefficient;
+                ringY += (targetY - ringY) * speedCoefficient;
+                ringCursor.style.left = `${ringX}px`;
+                ringCursor.style.top = `${ringY}px`;
+                requestAnimationFrame(animateRingCursor);
+            };
+            animateRingCursor();
+
+            // Set up cursor reactions to elements
+            document.querySelectorAll('[data-cursor]').forEach((el) => {
+                el.addEventListener('mouseenter', () => {
+                    const option = el.getAttribute('data-cursor');
+                    
+                    if (option === 'VIEW') {
+                        ringCursor.style.width = '70px';
+                        ringCursor.style.height = '70px';
+                        ringCursor.style.backgroundColor = 'rgba(0, 136, 255, 0.9)';
+                        ringCursor.style.borderColor = '#0088FF';
+                        cursorLabel.textContent = 'PREVIEW';
+                        cursorLabel.classList.remove('opacity-0');
+                    } else if (option === 'COPY') {
+                        ringCursor.style.width = '70px';
+                        ringCursor.style.height = '70px';
+                        ringCursor.style.backgroundColor = 'rgba(0, 136, 255, 0.9)';
+                        ringCursor.style.borderColor = '#0088FF';
+                        cursorLabel.textContent = 'CONNECT';
+                        cursorLabel.classList.remove('opacity-0');
+                    } else if (option === 'SCALE') {
+                        ringCursor.style.width = '55px';
+                        ringCursor.style.height = '55px';
+                        ringCursor.style.borderColor = '#0088FF';
+                    }
+                });
+
+                el.addEventListener('mouseleave', () => {
+                    ringCursor.style.width = '40px';
+                    ringCursor.style.height = '40px';
+                    ringCursor.style.backgroundColor = 'transparent';
+                    ringCursor.style.borderColor = '#0088FF';
+                    cursorLabel.classList.add('opacity-0');
+                });
+            });
+        }
+
+        /* -----------------------------------------------------
+           CERTIFICATION LIGHTBOX DICTIONARY
+        ----------------------------------------------------- */
+        const certificationLookup = {
+            'aws-genai': {
+                tag: 'AMAZON WEB SERVICES',
+                title: 'AWS Generative AI Applications',
+                issuer: 'Amazon Web Services Training Ecosystem',
+                details: 'Core competence validation covering generative models, prompt engineering, retrieval augmented generation architectures, deployment models, and SaaS structural compliance criteria.',
+                number: 'AWS GEN AI 2024 904',
+                label: 'AWS Certified'
+            },
+            'ai-cloud': {
+                tag: 'CLOUD SYSTEMS ARCHITECTURE',
+                title: 'AI Fundamentals and the Cloud',
+                issuer: 'Industry Cloud Partnership Standards',
+                details: 'Validating cloud provider structures, machine learning computing deployments, and high volume database configuration strategies for large scale B2B enterprise software deployments.',
+                number: 'AI CLOUD FND 88301',
+                label: 'Cloud Solutions'
+            },
+            'digital-marketing': {
+                tag: 'CONVERSION & CLIENT ACQUISITION',
+                title: 'Digital Marketing Specialist',
+                issuer: 'Global Industry Marketing Standards Board',
+                details: 'Validating operational knowledge across organic search optimization channels, strategic brand placements, target B2B acquisition sequences, and retention metrics.',
+                number: 'MKTG DIG 2024 554',
+                label: 'Growth Certified'
+            },
+            'mobile-app': {
+                tag: 'CLIENT LIFECYCLE MANAGEMENT',
+                title: 'Mobile App Marketing',
+                issuer: 'Google Academy / Industry Partnership Alliance',
+                details: 'Advanced certification regarding performance marketing structures, app lifecycle event setup, direct user acquisition funnels, retention math, and expansion frameworks.',
+                number: 'MBL APP MKTG 677103',
+                label: 'Mobile Certified'
+            }
+        };
+
+        // Modal Action Handlers
+        function openModal(id) {
+            const data = certificationLookup[id];
+            if (!data) return;
+
+            const targetContent = document.getElementById('modalContent');
+            targetContent.innerHTML = `
+                <div class="border-2 border-dashed border-paper-border rounded-2xl p-6 sm:p-8 bg-paper relative">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <span class="font-mono text-[10px] tracking-widest text-accent font-bold">${data.tag}</span>
+                            <h3 class="font-display font-bold text-xl sm:text-2xl text-ink tracking-tight mt-1">${data.title}</h3>
+                        </div>
+                        <i class="fa-solid fa-award text-accent text-3xl animate-pulse"></i>
+                    </div>
+                    
+                    <p class="font-mono text-xs text-ink/40 mb-4 border-b border-paper-border pb-2">Issuer: <span class="text-ink/80 font-bold">${data.issuer}</span></p>
+                    <p class="text-sm text-ink/70 leading-relaxed mb-6 font-sans">${data.details}</p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 pt-4 border-t border-paper-border text-xs font-mono">
+                        <div>
+                            <p class="text-ink/40 text-[9px] uppercase">Certificate Serial Identification</p>
+                            <p class="text-ink font-bold">${data.number}</p>
+                        </div>
+                        <div class="px-3 py-1.5 rounded bg-accent-soft border border-accent/20 text-accent font-bold tracking-widest text-[10px] uppercase">
+                            ${data.label}
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end gap-4 mt-2">
+                    <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-accent text-white font-bold text-xs hover:bg-accent-hover transition-colors flex items-center gap-2 uppercase font-mono">
+                        Close Certificate Review
+                    </button>
+                </div>
+            `;
+
+            const modal = document.getElementById('credentialModal');
+            const frame = document.getElementById('modalFrame');
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                frame.classList.remove('scale-95');
+                frame.classList.add('scale-100');
+            }, 50);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('credentialModal');
+            const frame = document.getElementById('modalFrame');
+            
+            modal.classList.add('opacity-0');
+            frame.classList.remove('scale-100');
+            frame.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 500);
+        }
+
+        // Horizontal scrolling actions
+        function scrollCertificates(direction) {
+            const rail = document.getElementById('certRail');
+            const scrollAmount = 310; // Scroll equivalent of one card width + gap
+            if (direction === 'left') {
+                rail.scrollLeft -= scrollAmount;
+            } else {
+                rail.scrollLeft += scrollAmount;
+            }
+        }
+
+        // Monitor certification track scrolling for interactive indicator
+        const certRail = document.getElementById('certRail');
+        const scrollBarIndicator = document.getElementById('scrollBarIndicator');
+        if (certRail && scrollBarIndicator) {
+            certRail.addEventListener('scroll', () => {
+                const totalWidth = certRail.scrollWidth - certRail.clientWidth;
+                if (totalWidth > 0) {
+                    const percentage = (certRail.scrollLeft / totalWidth) * 100;
+                    // Max indicator size is 25% width, we slide it using left percent offset
+                    scrollBarIndicator.style.left = `${percentage * 0.75}%`;
+                }
+            });
+        }
+
+        /* -----------------------------------------------------
+           GSAP GRAPHICS & TIMELINES (FAST NATIVE FLOW)
+        ----------------------------------------------------- */
+        window.addEventListener('DOMContentLoaded', () => {
+            
+            let elementsRevealed = false;
+            const triggerStaticFallback = () => {
+                if (elementsRevealed) return;
+                elementsRevealed = true;
+                document.querySelectorAll('.reveal').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+                document.querySelectorAll('[data-line]').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+                const heroPath = document.getElementById('heroPath');
+                if (heroPath) heroPath.style.strokeDashoffset = '0';
+                const statPath = document.getElementById('statPath');
+                if (statPath) statPath.style.strokeDashoffset = '0';
+            };
+
+            const backupTimer = setTimeout(triggerStaticFallback, 2400);
+
+            if (reducedMotion) {
+                triggerStaticFallback();
+                clearTimeout(backupTimer);
+                return;
+            }
+
+            try {
+                gsap.registerPlugin(ScrollTrigger);
+
+                /* -----------------------------------------------------
+                   ANIMATING HERO ELEMENTS
+                ----------------------------------------------------- */
+                gsap.to('#heroPath', {
+                    strokeDashoffset: 0,
+                    duration: 1.2,
+                    ease: 'power2.out',
+                    delay: 0.2
+                });
+
+                document.querySelectorAll('[data-line]').forEach((line) => {
+                    const lineText = line.textContent.trim();
+                    line.textContent = '';
+                    lineText.split('').forEach((character) => {
+                        const characterContainer = document.createElement('span');
+                        characterContainer.className = 'split-char inline-block';
+                        characterContainer.textContent = character === ' ' ? '\u00A0' : character;
+                        line.appendChild(characterContainer);
+                    });
+                });
+
+                gsap.from('.split-char', {
+                    yPercent: 120,
+                    opacity: 0,
+                    duration: 0.6,
+                    stagger: 0.01,
+                    ease: 'power2.out',
+                    onComplete: () => {
+                        clearTimeout(backupTimer);
+                        elementsRevealed = true;
+                    }
+                });
+
+                /* -----------------------------------------------------
+                   ENTRY RENDERINGS FOR SECTION CARDS
+                ----------------------------------------------------- */
+                gsap.utils.toArray('.reveal').forEach((el) => {
+                    gsap.fromTo(el, 
+                        { y: 20, opacity: 0 },
+                        {
+                            y: 0,
+                            opacity: 1,
+                            duration: 0.5,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: el,
+                                start: 'top 95%', // Starts much earlier
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                });
+
+                /* -----------------------------------------------------
+                   INSTANT VIEWPORT STAT TRIGGERS (FAST & SNAPPY)
+                ----------------------------------------------------- */
+                // Draw graph path instantly when stats scroll into view
+                gsap.to('#statPath', {
+                    strokeDashoffset: 0,
+                    duration: 1.5,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: '#stats',
+                        start: 'top 95%', // Triggers instantly when entering viewport at bottom 95%
+                        toggleActions: 'play none none none'
+                    }
+                });
+
+                // Count metrics simultaneously with immediate triggers
+                const configureStatisticCounter = (elementId) => {
+                    const counterElement = document.getElementById(elementId);
+                    if (!counterElement) return;
+                    const finalVal = parseFloat(counterElement.getAttribute('data-target'));
+                    const outputSuffix = counterElement.getAttribute('data-suffix');
+                    const reactiveHolder = { value: 0 };
+
+                    gsap.to(reactiveHolder, {
+                        value: finalVal,
+                        duration: 1.5,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: '#stats',
+                            start: 'top 95%', // Fast viewport entry trigger
+                            toggleActions: 'play none none none'
+                        },
+                        onUpdate: () => {
+                            counterElement.textContent = Math.round(reactiveHolder.value) + outputSuffix;
+                        }
+                    });
+                };
+
+                ['stat-1', 'stat-2', 'stat-3', 'stat-4'].forEach(configureStatisticCounter);
+
+                /* -----------------------------------------------------
+                   STICKY ACTIVE EXPERIENCE POSITION RAIL CONTROLLER
+                ----------------------------------------------------- */
+                const railTitleElement = document.getElementById('railTitle');
+                const railSubElement = document.getElementById('railSub');
+                const railDateElement = document.getElementById('railDate');
+                const experienceWorkCards = gsap.utils.toArray('.exp-card');
+
+                function updateLeftStickyRail(targetCard) {
+                    const targetCompany = targetCard.getAttribute('data-company');
+                    const targetDate = targetCard.getAttribute('data-date');
+                    
+                    // Unified display for Optus tenure so overall Nov 2022 to Feb 2026 tenure is highlighted cleanly
+                    if (targetCompany === 'Optus') {
+                        railTitleElement.textContent = 'Optus';
+                        railSubElement.textContent = 'Nov 2022 to Feb 2026 · Melbourne, Australia';
+                        railDateElement.textContent = targetDate;
+                    } else {
+                        railTitleElement.textContent = targetCompany;
+                        railSubElement.innerHTML = targetCard.getAttribute('data-sub');
+                        railDateElement.textContent = targetDate;
+                    }
+                    
+                    gsap.fromTo([railTitleElement, railDateElement], 
+                        { opacity: 0.3, y: 5 },
+                        { opacity: 1, y: 0, duration: 0.3 }
+                    );
+                }
+
+                function getClosestCardInViewport() {
+                    const screenMidpoint = window.innerHeight / 2;
+                    let selectedActiveCard = null;
+                    let lowestOffset = Infinity;
+
+                    experienceWorkCards.forEach((card) => {
+                        const currentBounds = card.getBoundingClientRect();
+                        const cardCenterPoint = currentBounds.top + currentBounds.height / 2;
+                        const cardDistance = Math.abs(cardCenterPoint - screenMidpoint);
+
+                        if (currentBounds.bottom > 0 && currentBounds.top < window.innerHeight && cardDistance < lowestOffset) {
+                            lowestOffset = cardDistance;
+                            selectedActiveCard = card;
+                        }
+                    });
+
+                    if (selectedActiveCard) {
+                        updateLeftStickyRail(selectedActiveCard);
+                    }
+                }
+
+                ScrollTrigger.addEventListener('refresh', getClosestCardInViewport);
+                
+                ScrollTrigger.create({
+                    trigger: '#experience',
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    onUpdate: getClosestCardInViewport,
+                    onRefresh: getClosestCardInViewport
+                });
+
+                getClosestCardInViewport();
+
+                // Work cards visual fade effects
+                experienceWorkCards.forEach((card) => {
+                    gsap.fromTo(card, 
+                        { opacity: 0.4, y: 15 },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.5,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: card,
+                                start: 'top 92%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                });
+
+                /* -----------------------------------------------------
+                   SCROLL INDICATOR INTEGRATION
+                ----------------------------------------------------- */
+                gsap.to('#progressFill', {
+                    width: '100%',
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: document.body,
+                        start: 'top top',
+                        end: 'bottom bottom',
+                        scrub: true
+                    }
+                });
+
+                window.addEventListener('load', () => {
+                    ScrollTrigger.refresh();
+                    clearTimeout(backupTimer);
+                    elementsRevealed = true;
+                });
+
+            } catch (err) {
+                console.warn('GSAP execution failed: ', err);
+                triggerStaticFallback();
+                clearTimeout(backupTimer);
+            }
+        });
+    </script>
 </body>
 </html>
