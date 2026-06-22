@@ -50,7 +50,6 @@
     </script>
 
     <style>
-        /* Modern Swiss grid typography presets and style overrides */
         body {
             background-color: #FAF9F5;
             color: #0F1012;
@@ -151,94 +150,99 @@
         }
 
         /* ==========================================================
-           INTERACTIVE INTERESTS HOVER ANIMATIONS
+           STREAMING_CHUNK: Continuous Loop Interest Animations
            ========================================================== */
         
-        /* Cricket: Rotate and Bounce */
-        .interest-card:hover .fa-baseball {
-            animation: spinBounce 0.8s ease-in-out infinite alternate;
+        /* Cricket: Rotate and Bounce loop */
+        .fa-baseball {
+            animation: spinBounce 2s ease-in-out infinite alternate;
         }
         @keyframes spinBounce {
             0% { transform: translateY(0) rotate(0deg); }
-            100% { transform: translateY(-10px) rotate(180deg); }
+            100% { transform: translateY(-8px) rotate(180deg); }
         }
 
-        /* Basketball: Squash and Stretch bounce */
-        .interest-card:hover .fa-basketball {
-            animation: basketBounce 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
+        /* Basketball: Squash and Stretch bounce loop */
+        .fa-basketball {
+            animation: basketBounce 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
         }
         @keyframes basketBounce {
             0% { transform: scale(1, 1) translateY(0); }
-            30% { transform: scale(1, 0.9) translateY(0); }
-            100% { transform: scale(0.9, 1.1) translateY(-14px); }
+            15% { transform: scale(1, 0.95) translateY(0); }
+            100% { transform: scale(0.95, 1.05) translateY(-12px); }
         }
 
-        /* Swimming: Horizontal sinusoidal wave */
-        .interest-card:hover .fa-person-swimming {
-            animation: swimWave 1.2s ease-in-out infinite;
+        /* Swimming: Horizontal sinusoidal wave loop */
+        .fa-person-swimming {
+            animation: swimWave 3s ease-in-out infinite;
         }
         @keyframes swimWave {
             0% { transform: translateX(0) translateY(0) rotate(0); }
-            25% { transform: translateX(6px) translateY(-2px) rotate(-4deg); }
-            75% { transform: translateX(-6px) translateY(2px) rotate(4deg); }
+            25% { transform: translateX(5px) translateY(-2px) rotate(-3deg); }
+            75% { transform: translateX(-5px) translateY(2px) rotate(3deg); }
             100% { transform: translateX(0) translateY(0) rotate(0); }
         }
 
-        /* Outdoor Sports (Mountain/Sun): Scale and rise */
-        .interest-card:hover .fa-mountain-sun {
-            animation: sunRise 0.8s ease-in-out infinite alternate;
+        /* Outdoor Sports (Mountain/Sun): Scale and rise loop */
+        .fa-mountain-sun {
+            animation: sunRise 2.2s ease-in-out infinite alternate;
         }
         @keyframes sunRise {
             0% { transform: scale(1) translateY(0); }
-            100% { transform: scale(1.15) translateY(-5px); }
+            100% { transform: scale(1.1) translateY(-4px); }
         }
 
-        /* Travel (Plane): Fly off-screen right and return left */
-        .interest-card:hover .fa-plane-departure {
-            animation: planeFly 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        /* Travel (Plane): Fly off-screen right and return left loop */
+        .fa-plane-departure {
+            animation: planeFly 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
         }
         @keyframes planeFly {
             0% { transform: translate(0, 0) rotate(0); opacity: 1; }
-            45% { transform: translate(35px, -18px) rotate(-10deg); opacity: 0; }
-            50% { transform: translate(-35px, 18px) rotate(-10deg); opacity: 0; }
+            40% { transform: translate(25px, -12px) rotate(-8deg); opacity: 0; }
+            45% { transform: translate(-25px, 12px) rotate(-8deg); opacity: 0; }
             100% { transform: translate(0, 0) rotate(0); opacity: 1; }
         }
 
-        /* Reading (Book): Scale and turn pages */
-        .interest-card:hover .fa-book {
-            animation: bookOpen 0.8s ease-in-out infinite alternate;
+        /* Reading (Book): Scale and turn pages loop */
+        .fa-book {
+            animation: bookOpen 2.5s ease-in-out infinite alternate;
             transform-origin: left center;
         }
         @keyframes bookOpen {
             0% { transform: scaleX(1); }
-            100% { transform: scaleX(0.7) skewY(-4deg); }
+            100% { transform: scaleX(0.75) skewY(-3deg); }
         }
 
-        /* Video Games (Gamepad): Shake and rumble */
-        .interest-card:hover .fa-gamepad {
-            animation: gameWiggle 0.4s linear infinite;
+        /* Video Games (Gamepad): Shake and rumble loop */
+        .fa-gamepad {
+            animation: gameWiggle 1.2s linear infinite;
         }
         @keyframes gameWiggle {
-            0% { transform: rotate(0) scale(1.05); }
-            25% { transform: rotate(-8deg) scale(1.05); }
-            75% { transform: rotate(8deg) scale(1.05); }
-            100% { transform: rotate(0) scale(1.05); }
+            0% { transform: rotate(0) scale(1); }
+            25% { transform: rotate(-5deg) scale(1.05); }
+            75% { transform: rotate(5deg) scale(1.05); }
+            100% { transform: rotate(0) scale(1); }
         }
 
-        /* Art (Palette): Pivot and paint brush stroke */
-        .interest-card:hover .fa-palette {
-            animation: artBrush 0.8s ease-in-out infinite alternate;
+        /* Art (Palette): Pivot and paint brush stroke loop */
+        .fa-palette {
+            animation: artBrush 2.8s ease-in-out infinite alternate;
         }
         @keyframes artBrush {
             0% { transform: rotate(0) translate(0); }
-            50% { transform: rotate(15deg) translate(3px, -3px); }
-            100% { transform: rotate(-15deg) translate(-3px, 3px); }
+            50% { transform: rotate(10deg) translate(2px, -2px); }
+            100% { transform: rotate(-10deg) translate(-2px, 2px); }
+        }
+
+        /* Hover states for interactive interests to accelerate loops */
+        .interest-card:hover i {
+            color: #0066EE !important;
+            filter: drop-shadow(0 0 8px rgba(0, 136, 255, 0.3));
         }
     </style>
 </head>
 <body class="grid-blueprint relative">
 
-    <!-- Custom interactive liquid cursor follower elements -->
     <div class="custom-cursor hidden md:block" id="dotCursor"></div>
     <div class="custom-cursor-follower hidden md:block flex items-center justify-center text-[8px] font-mono font-bold tracking-wider text-white select-none overflow-hidden" id="ringCursor">
         <span id="cursorLabel" class="opacity-0 transition-opacity duration-200"></span>
@@ -252,27 +256,58 @@
         <div id="progressFill" class="h-full bg-accent w-0 origin-left transition-all duration-75"></div>
     </div>
 
-    <!-- Minimalist Sticky Navigation Bar -->
     <nav class="fixed top-0 left-0 right-0 z-40 bg-paper/80 backdrop-blur-md border-b border-paper-border px-6 md:px-12 py-4 flex items-center justify-between">
         <a href="#top" class="font-display font-black text-xl tracking-tight text-ink hover:text-accent transition-colors duration-300">SP</a>
         
-        <!-- Optimized Navigation Menu Hooks -->
-        <div class="flex items-center gap-4 md:gap-8">
+        <!-- Desktop Optimized Navigation Menu -->
+        <div class="hidden lg:flex items-center gap-8">
             <a href="#experience" class="text-xs md:text-sm font-medium text-ink/70 hover:text-ink transition-colors duration-300">Experience</a>
             <a href="#stats" class="text-xs md:text-sm font-medium text-ink/70 hover:text-ink transition-colors duration-300">Track Record</a>
             <a href="#skills" class="text-xs md:text-sm font-medium text-ink/70 hover:text-ink transition-colors duration-300">Competencies</a>
-            <a href="#education" class="hidden md:inline-block text-xs md:text-sm font-medium text-ink/70 hover:text-ink transition-colors duration-300">Education</a>
-            <a href="#certifications" class="hidden md:inline-block text-xs md:text-sm font-medium text-ink/70 hover:text-ink transition-colors duration-300">Certifications</a>
-            <a href="mailto:shrudap@gmail.com" class="px-4 py-2 rounded-full bg-accent text-white hover:bg-accent-hover text-xs font-semibold transition-all duration-300">Contact</a>
+            <a href="#education" class="text-xs md:text-sm font-medium text-ink/70 hover:text-ink transition-colors duration-300">Education</a>
+            <a href="#certifications" class="text-xs md:text-sm font-medium text-ink/70 hover:text-ink transition-colors duration-300">Certifications</a>
+            <a href="mailto:shrudap@gmail.com" class="px-5 py-2.5 rounded-full bg-accent text-white hover:bg-accent-hover text-xs font-semibold transition-all duration-300 shadow-sm" data-cursor="SCALE">Contact</a>
+        </div>
+
+        <!-- Sleek Responsive Mobile Trigger -->
+        <div class="flex lg:hidden items-center gap-4">
+            <a href="mailto:shrudap@gmail.com" class="px-4 py-2 rounded-full bg-accent text-white hover:bg-accent-hover text-xs font-semibold transition-all duration-300 shadow-sm">Contact</a>
+            <button onclick="toggleMobileMenu()" class="w-10 h-10 flex items-center justify-center rounded-full border border-paper-border bg-paper hover:bg-paper-dim transition-colors" aria-label="Toggle Navigation Menu">
+                <i id="menuIcon" class="fa-solid fa-bars text-ink"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- ============ HERO AREA ============ -->
-    <header id="top" class="min-h-screen flex flex-col items-center justify-center text-center relative px-6 pt-32 pb-20 bg-[radial-gradient(ellipse_90%_60%_at_50%_15%,rgba(0,136,255,0.06),transparent_65%)]">
-        <div class="max-w-[1100px] w-full">
+    <div id="mobileMenuOverlay" class="fixed inset-0 bg-paper-card/95 backdrop-blur-lg z-30 flex flex-col justify-center items-center p-8 transition-all duration-500 transform translate-x-full lg:hidden">
+        <div class="flex flex-col items-center gap-8 text-center">
+            <a href="#top" onclick="toggleMobileMenu()" class="font-display font-black text-4xl text-ink hover:text-accent tracking-tighter">SP</a>
+            <div class="h-[1px] w-24 bg-paper-border"></div>
+            <a href="#experience" onclick="toggleMobileMenu()" class="font-display font-extrabold text-2xl text-ink/80 hover:text-ink">Experience</a>
+            <a href="#stats" onclick="toggleMobileMenu()" class="font-display font-extrabold text-2xl text-ink/80 hover:text-ink">Track Record</a>
+            <a href="#skills" onclick="toggleMobileMenu()" class="font-display font-extrabold text-2xl text-ink/80 hover:text-ink">Competencies</a>
+            <a href="#education" onclick="toggleMobileMenu()" class="font-display font-extrabold text-2xl text-ink/80 hover:text-ink">Education</a>
+            <a href="#certifications" onclick="toggleMobileMenu()" class="font-display font-extrabold text-2xl text-ink/80 hover:text-ink">Certifications</a>
+            <div class="h-[1px] w-24 bg-paper-border mt-4"></div>
+            <p class="font-mono text-xs text-ink/40">GUJARAT, INDIA</p>
+        </div>
+    </div>
+
+    <!-- ============ STREAMING_CHUNK: HERO AREA ============ -->
+    <header id="top" class="min-h-screen flex flex-col items-center justify-center text-center relative px-6 pt-32 pb-20 bg-[radial-gradient(ellipse_90%_60%_at_50%_15%,rgba(0,136,255,0.06),transparent_65%)] overflow-hidden">
+        
+        <!-- Rotating light blue technical vector shapes surrounding name -->
+        <div class="absolute inset-0 pointer-events-none flex items-center justify-center z-0">
+            <svg class="w-[85%] max-w-[900px] h-auto opacity-[0.15] animate-[spin_120s_linear_infinite]" viewBox="0 0 500 500" fill="none">
+                <circle cx="250" cy="250" r="230" stroke="#0088FF" stroke-width="1.5" stroke-dasharray="10 15" />
+                <circle cx="250" cy="250" r="180" stroke="#0088FF" stroke-width="1" />
+                <path d="M250 0 V500 M0 250 H500" stroke="#0088FF" stroke-width="0.5" stroke-dasharray="5 5" />
+            </svg>
+        </div>
+
+        <div class="max-w-[1100px] w-full relative z-10">
             
-            <!-- Special Industry Recognitions Badges -->
-            <div class="flex flex-wrap justify-center gap-3 mb-6 reveal">
+            <!-- Industry Recognitions Badges -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8 reveal">
                 <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-[10px] font-mono font-bold tracking-wider text-accent uppercase">
                     <i class="fa-brands fa-apple text-sm"></i> Apple Champion
                 </span>
@@ -289,7 +324,6 @@
                 REVENUE GROWTH SPECIALIST : B2B SALES AND STRATEGIC PARTNERSHIPS
             </p>
 
-            <!-- Hero Name Typographic Layout -->
             <h1 class="font-display font-extrabold text-[11vw] sm:text-[8vw] md:text-[6.5vw] leading-[0.95] tracking-tight text-ink mb-6" aria-label="Shrudam D. Prajapati">
                 <span class="block overflow-hidden py-1">
                     <span class="inline-block" data-line>Shrudam D.</span>
@@ -309,10 +343,10 @@
                 <span class="flex items-center gap-2 hover:text-ink transition-colors">
                     <i class="fa-solid fa-location-dot text-accent"></i> Gujarat, India
                 </span>
-                <a href="mailto:shrudap@gmail.com" class="flex items-center gap-2 hover:text-ink transition-colors">
+                <a href="mailto:shrudap@gmail.com" class="flex items-center gap-2 hover:text-ink transition-colors" data-cursor="SCALE">
                     <i class="fa-solid fa-envelope text-accent"></i> shrudap@gmail.com
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-ink transition-colors">
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-ink transition-colors" data-cursor="SCALE">
                     <i class="fa-brands fa-linkedin text-accent text-sm"></i> LinkedIn
                 </a>
             </div>
@@ -348,7 +382,7 @@
         }
     </style>
 
-    <!-- ============ SUMMARY STRIP ============ -->
+    <!-- ============ STREAMING_CHUNK: SUMMARY STRIP ============ -->
     <section class="py-20 md:py-28 border-b border-paper-border bg-paper-card relative overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(0,136,255,0.02),transparent_40%)]"></div>
         <div class="max-w-[1100px] mx-auto px-8 relative z-10">
@@ -365,7 +399,7 @@
         </div>
     </section>
 
-    <!-- ============ STATS TRACK RECORD (Immediate scroll triggers) ============ -->
+    <!-- ============ STREAMING_CHUNK: STATS TRACK RECORD ============ -->
     <section id="stats" class="py-24 bg-paper border-b border-paper-border">
         <div class="max-w-[1100px] mx-auto w-full px-8">
             <p class="font-mono text-xs tracking-wider text-accent font-semibold uppercase mb-4 text-center">TRACK RECORD</p>
@@ -400,7 +434,7 @@
         </div>
     </section>
 
-    <!-- ============ WORK EXPERIENCE ============ -->
+    <!-- ============ STREAMING_CHUNK: WORK EXPERIENCE ============ -->
     <section id="experience" class="py-24 md:py-32 bg-paper-card">
         <div class="max-w-[1100px] mx-auto px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
@@ -516,7 +550,7 @@
         </div>
     </section>
 
-    <!-- ============ SKILLS & CORE COMPETENCIES ============ -->
+    <!-- ============ STREAMING_CHUNK: SKILLS & CORE COMPETENCIES ============ -->
     <section id="skills" class="py-24 bg-paper border-y border-paper-border">
         <div class="max-w-[1100px] mx-auto px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -594,7 +628,7 @@
         </div>
     </section>
 
-    <!-- ============ SECTION: EDUCATION ============ -->
+    <!-- ============ STREAMING_CHUNK: SECTION: EDUCATION ============ -->
     <section id="education" class="py-24 bg-paper-card border-b border-paper-border">
         <div class="max-w-[1100px] mx-auto px-8">
             <div class="mb-12">
@@ -624,7 +658,7 @@
         </div>
     </section>
 
-    <!-- ============ SECTION: CERTIFICATIONS ============ -->
+    <!-- ============ STREAMING_CHUNK: SECTION: CERTIFICATIONS ============ -->
     <section id="certifications" class="py-24 bg-paper border-b border-paper-border relative">
         <div class="max-w-[1100px] mx-auto px-8 relative">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4">
@@ -705,7 +739,7 @@
         </div>
     </section>
 
-    <!-- ============ SECTION: COLLABORATORS & FEEDBACK ============ -->
+    <!-- ============ STREAMING_CHUNK: SECTION: COLLABORATORS & FEEDBACK ============ -->
     <section class="py-24 bg-paper-card border-b border-paper-border">
         <div class="max-w-[1100px] mx-auto px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
@@ -746,46 +780,46 @@
         </div>
     </section>
 
-    <!-- ============ PERSONAL INTERESTS ============ -->
+    <!-- ============ STREAMING_CHUNK: PERSONAL INTERESTS ============ -->
     <section class="py-24 bg-paper">
         <div class="max-w-[1100px] mx-auto px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 <div class="lg:col-span-4 space-y-4">
                     <p class="font-mono text-xs tracking-wider text-accent font-semibold uppercase">OUTSIDE OF WORK</p>
                     <h2 class="font-display font-extrabold text-3xl text-ink tracking-tight">Interests and Pursuits</h2>
-                    <p class="text-ink/60 text-sm leading-relaxed">Daily lifestyle, athletic endeavors, and recreation that keep professional focus sharp. Hover or tap each block to trigger visual play effects.</p>
+                    <p class="text-ink/60 text-sm leading-relaxed">Daily lifestyle, athletic endeavors, and recreation that keep professional focus sharp. Every symbol animates in a continuous, lively loop.</p>
                 </div>
                 <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
                     <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2 cursor-pointer interest-card select-none" data-cursor="SCALE">
-                        <i class="fa-solid fa-baseball text-accent text-2xl transition-transform duration-300"></i>
+                        <i class="fa-solid fa-baseball text-accent text-2xl transition-all duration-300 block"></i>
                         <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Cricket</span>
                     </div>
                     <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2 cursor-pointer interest-card select-none" data-cursor="SCALE">
-                        <i class="fa-solid fa-basketball text-accent text-2xl transition-transform duration-300"></i>
+                        <i class="fa-solid fa-basketball text-accent text-2xl transition-all duration-300 block"></i>
                         <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Basketball</span>
                     </div>
                     <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2 cursor-pointer interest-card select-none" data-cursor="SCALE">
-                        <i class="fa-solid fa-person-swimming text-accent text-2xl transition-transform duration-300"></i>
+                        <i class="fa-solid fa-person-swimming text-accent text-2xl transition-all duration-300 block"></i>
                         <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Swimming</span>
                     </div>
                     <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2 cursor-pointer interest-card select-none" data-cursor="SCALE">
-                        <i class="fa-solid fa-mountain-sun text-accent text-2xl transition-transform duration-300"></i>
+                        <i class="fa-solid fa-mountain-sun text-accent text-2xl transition-all duration-300 block"></i>
                         <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Outdoor Sports</span>
                     </div>
                     <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2 cursor-pointer interest-card select-none" data-cursor="SCALE">
-                        <i class="fa-solid fa-plane-departure text-accent text-2xl transition-transform duration-300"></i>
+                        <i class="fa-solid fa-plane-departure text-accent text-2xl transition-all duration-300 block"></i>
                         <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Travel</span>
                     </div>
                     <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2 cursor-pointer interest-card select-none" data-cursor="SCALE">
-                        <i class="fa-solid fa-book text-accent text-2xl transition-transform duration-300"></i>
+                        <i class="fa-solid fa-book text-accent text-2xl transition-all duration-300 block"></i>
                         <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Reading</span>
                     </div>
                     <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2 cursor-pointer interest-card select-none" data-cursor="SCALE">
-                        <i class="fa-solid fa-gamepad text-accent text-2xl transition-transform duration-300"></i>
+                        <i class="fa-solid fa-gamepad text-accent text-2xl transition-all duration-300 block"></i>
                         <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Video Games</span>
                     </div>
                     <div class="p-5 rounded-2xl bg-paper-card border border-paper-border text-center space-y-2 cursor-pointer interest-card select-none" data-cursor="SCALE">
-                        <i class="fa-solid fa-palette text-accent text-2xl transition-transform duration-300"></i>
+                        <i class="fa-solid fa-palette text-accent text-2xl transition-all duration-300 block"></i>
                         <span class="block text-xs font-semibold text-ink font-mono uppercase tracking-wide">Art</span>
                     </div>
                 </div>
@@ -799,13 +833,13 @@
             <div class="flex flex-col sm:flex-row items-center justify-between gap-8 text-xs font-mono">
                 <div class="text-center sm:text-left space-y-2">
                     <p class="text-white text-sm font-bold">Shrudam D. Prajapati</p>
-                    <p>© 2026 Shrudam D. Prajapati. Built with a clean light blue palette.</p>
+                    <p>© 2026 Shrudam D. Prajapati.</p>
                 </div>
                 <div class="flex flex-wrap justify-center gap-6">
                     <a href="mailto:shrudap@gmail.com" class="hover:text-accent transition-colors flex items-center gap-2" data-cursor="COPY">
                         <i class="fa-solid fa-envelope"></i> shrudap@gmail.com
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="hover:text-accent transition-colors flex items-center gap-2" data-cursor="SCALE">
+                    <a href="https://www.linkedin.com/in/shrudam/" target="_blank" rel="noopener" class="hover:text-accent transition-colors flex items-center gap-2" data-cursor="SCALE">
                         <i class="fa-brands fa-linkedin"></i> LinkedIn
                     </a>
                     <span class="flex items-center gap-2">
@@ -816,7 +850,7 @@
         </div>
     </footer>
 
-    <!-- ============ CREDENTIAL DETAIL MODAL LIGHTBOX ============ -->
+    <!-- ============ STREAMING_CHUNK: CREDENTIAL DETAIL MODAL LIGHTBOX ============ -->
     <div id="credentialModal" class="fixed inset-0 bg-ink/75 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden opacity-0 transition-all duration-500">
         <div class="w-full max-w-xl bg-paper-card rounded-3xl border border-paper-border p-6 sm:p-10 relative overflow-hidden shadow-2xl transform scale-95 transition-all duration-500" id="modalFrame">
             
@@ -838,6 +872,31 @@
     <script>
         // Check user preferences for system motions
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* -----------------------------------------------------
+           STREAMING_CHUNK: Responsive Mobile Menu Controller
+        ----------------------------------------------------- */
+        let mobileMenuOpen = false;
+        function toggleMobileMenu() {
+            const overlay = document.getElementById('mobileMenuOverlay');
+            const menuIcon = document.getElementById('menuIcon');
+            
+            mobileMenuOpen = !mobileMenuOpen;
+            if (mobileMenuOpen) {
+                overlay.classList.remove('translate-x-full');
+                overlay.classList.add('translate-x-0');
+                menuIcon.className = "fa-solid fa-xmark text-ink";
+                // Animate overlay menu links with a quick bounce
+                gsap.fromTo('#mobileMenuOverlay a', 
+                    { opacity: 0, y: 30 },
+                    { opacity: 1, y: 0, stagger: 0.1, duration: 0.4, ease: 'power2.out', delay: 0.2 }
+                );
+            } else {
+                overlay.classList.remove('translate-x-0');
+                overlay.classList.add('translate-x-full');
+                menuIcon.className = "fa-solid fa-bars text-ink";
+            }
+        }
 
         /* -----------------------------------------------------
            HIGH PERFORMANCE B2B CONNECTION CANVAS SCENE
@@ -931,7 +990,7 @@
         }
 
         /* -----------------------------------------------------
-           GENZ MAGNETIC LIQUID CURSOR CONTROLLERS
+           STREAMING_CHUNK: GenZ Magnetic Liquid Cursor Settings
         ----------------------------------------------------- */
         const dotCursor = document.getElementById('dotCursor');
         const ringCursor = document.getElementById('ringCursor');
@@ -1118,7 +1177,7 @@
         }
 
         /* -----------------------------------------------------
-           GSAP GRAPHICS & TIMELINES (FAST NATIVE FLOW)
+           STREAMING_CHUNK: GSAP Graphics & Typography Timelines
         ----------------------------------------------------- */
         window.addEventListener('DOMContentLoaded', () => {
             
@@ -1152,7 +1211,7 @@
                 gsap.registerPlugin(ScrollTrigger);
 
                 /* -----------------------------------------------------
-                   ANIMATING HERO ELEMENTS
+                   ANIMATING HERO ELEMENTS & TYPOGRAPHIC PHYSICS
                 ----------------------------------------------------- */
                 gsap.to('#heroPath', {
                     strokeDashoffset: 0,
@@ -1172,15 +1231,29 @@
                     });
                 });
 
+                // Springy wave reveal for letters on entrance
                 gsap.from('.split-char', {
                     yPercent: 120,
                     opacity: 0,
-                    duration: 0.6,
-                    stagger: 0.01,
-                    ease: 'power2.out',
+                    duration: 0.8,
+                    stagger: 0.02,
+                    ease: 'back.out(1.7)',
                     onComplete: () => {
                         clearTimeout(backupTimer);
                         elementsRevealed = true;
+
+                        // Continuous organic breathing float loop for letters
+                        gsap.to('.split-char', {
+                            y: -6,
+                            duration: 2,
+                            stagger: {
+                                each: 0.05,
+                                from: 'center',
+                                repeat: -1,
+                                yoyo: true
+                            },
+                            ease: 'sine.inOut'
+                        });
                     }
                 });
 
